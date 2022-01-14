@@ -5,8 +5,29 @@ import {
   AiFillGithub,
   AiOutlineInstagram,
 } from "react-icons/ai";
+import { useForm } from "react-hook-form";
 
 function Contact() {
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json, text-plain, */*",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log("Response received");
+      if (res.status === 200) {
+        console.log("Response status 200");
+      }
+    });
+  };
+
   return (
     <section
       className="text-gray-200 body-font relative bg-gray-900"
@@ -23,7 +44,10 @@ function Contact() {
           </p>
         </div>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
-          <div className="flex flex-wrap -m-2">
+          <form
+            className="flex flex-wrap -m-2"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div className="p-2 w-1/2">
               <div className="relative">
                 <label
@@ -37,6 +61,7 @@ function Contact() {
                   id="name"
                   name="name"
                   className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  {...register("name")}
                 />
               </div>
             </div>
@@ -53,6 +78,7 @@ function Contact() {
                   id="email"
                   name="email"
                   className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  {...register("email")}
                 />
               </div>
             </div>
@@ -68,16 +94,16 @@ function Contact() {
                   id="message"
                   name="message"
                   className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  {...register("message")}
                 ></textarea>
               </div>
             </div>
             <div className="p-2 w-full">
               <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Button
+                Enviar mensaje
               </button>
             </div>
             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-              <a className="text-indigo-500">example@email.com</a>
               <p className="leading-normal my-5">
                 61 nro 821.
                 <br />
@@ -90,16 +116,16 @@ function Contact() {
                     href="https://www.linkedin.com/in/ignacio-cafiero-torrubia-743487216/"
                     passHref
                   >
-                    <AiFillLinkedin></AiFillLinkedin>
+                    <AiFillLinkedin className="text-3xl"></AiFillLinkedin>
                   </Link>
                 </div>
                 <div className="mx-2">
                   <Link
-                    className="ml-4 text-gray-200"
+                    className="ml-4 text-gray-200 "
                     href="https://www.instagram.com/tofiedlp1/"
                     passHref
                   >
-                    <AiOutlineInstagram></AiOutlineInstagram>
+                    <AiOutlineInstagram className="text-3xl"></AiOutlineInstagram>
                   </Link>
                 </div>
                 <div className="mx-2">
@@ -108,12 +134,12 @@ function Contact() {
                     href="https://github.com/ignacioedlp"
                     passHref
                   >
-                    <AiFillGithub></AiFillGithub>
+                    <AiFillGithub className="text-3xl"></AiFillGithub>
                   </Link>
                 </div>
               </span>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

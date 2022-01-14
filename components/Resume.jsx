@@ -47,29 +47,30 @@ function Resume() {
               <h2 className="text-gray-100 text-3xl title-font font-medium mb-4 ">
                 Informacion
               </h2>
-
-              <li className="mb-4">
-                <span className="text-gray-300 mr-2">Localizacion:</span>
-                <span className="text-gray-100">La Plata, Argentina</span>
-              </li>
-              <li className="mb-4">
-                <span className="text-gray-300 mr-2">Edad:</span>
-                <span className="text-gray-100">20</span>
-              </li>
-              <li className="mb-4">
-                <span className="text-gray-300 mr-2">Correo:</span>
-                <span className="text-gray-100">
-                  ignaciocafiero12@gmail.com
-                </span>
-              </li>
-              <li className="mb-4">
-                <span className="text-gray-300 mr-2">Estado:</span>
-                <span className="text-gray-100">Estudiante</span>
-              </li>
-              <li className="mb-4">
-                <span className="text-gray-300 mr-2">Telefono</span>
-                <span className="text-gray-100">+54 221 524 5019</span>
-              </li>
+              <ul>
+                <li className="mb-4">
+                  <span className="text-gray-300 mr-2">Localizacion:</span>
+                  <span className="text-gray-100">La Plata, Argentina</span>
+                </li>
+                <li className="mb-4">
+                  <span className="text-gray-300 mr-2">Edad:</span>
+                  <span className="text-gray-100">20</span>
+                </li>
+                <li className="mb-4">
+                  <span className="text-gray-300 mr-2">Mail:</span>
+                  <span className="text-gray-100">
+                    ignaciocafiero12@gmail.com
+                  </span>
+                </li>
+                <li className="mb-4">
+                  <span className="text-gray-300 mr-2">Estado:</span>
+                  <span className="text-gray-100">Estudiante</span>
+                </li>
+                <li className="mb-4">
+                  <span className="text-gray-300 mr-2">Telefono</span>
+                  <span className="text-gray-100">+54 221 524 5019</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

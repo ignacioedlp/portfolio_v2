@@ -17,9 +17,12 @@ function Profile() {
             me propongo
           </p>
           <div className="flex justify-center">
-            <button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">
+            <a
+              href="#contact"
+              className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
+            >
               Contactame
-            </button>
+            </a>
             <a
               download="CafieroCV.pdf"
               href="CV.pdf"
