@@ -47,9 +47,13 @@ function Navbar() {
             </Link>
           </div>
         </nav>
-        <button className="ml-4 inline-flex text-gray-200 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
+        <a
+          download="CafieroCV.pdf"
+          href="CV.pdf"
+          className="ml-4 inline-flex text-gray-200 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
+        >
           Ver CV
-        </button>
+        </a>
       </div>
     </header>
   );

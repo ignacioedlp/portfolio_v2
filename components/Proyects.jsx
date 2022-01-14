@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Proyects() {
   return (
@@ -15,130 +16,150 @@ function Proyects() {
             heard of them man bun deep jianbing selfies heirloom.
           </p>
         </div>
-        <div className="flex flex-wrap -m-4">
-          <div className="lg:w-1/3 sm:w-1/2 p-4">
-            <div className="flex relative">
+        <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+          <div className="lg:w-1/3 sm:w-1/2 p-4 ">
+            <div className="flex relative h-64 w-90">
               <Image
                 layout="fill"
                 alt="gallery"
                 className="absolute inset-0 w-full h-full object-cover object-center"
-                src="/Images/proyectDefault.jpg"
+                src="/proyects/Blog-nextjs.png"
               />
               <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
                 <h2 className="tracking-widest text-sm title-font font-medium text-red-400 mb-1">
-                  THE SUBTITLE
+                  Blog con nextjs
                 </h2>
                 <h1 className="title-font text-lg font-medium text-white mb-3">
-                  Shooting Stars
+                  NextJs, NextAuth, Tailwind and PostgreSQL
                 </h1>
-                <button className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
-                  Ver Proyecto
-                </button>
+                <div className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
+                  <Link
+                    href="ignacio-cafiero-blogr-nextjs-prisma.vercel.app"
+                    passHref
+                  >
+                    Ver Proyecto
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 sm:w-1/2 p-4">
-            <div className="flex relative">
+          <div className="lg:w-1/3 sm:w-1/2 p-4 ">
+            <div className="flex relative h-64 w-90">
               <Image
                 layout="fill"
                 alt="gallery"
                 className="absolute inset-0 w-full h-full object-cover object-center"
-                src="/Images/proyectDefault.jpg"
+                src="/proyects/crypto-price.png"
               />
               <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
                 <h2 className="tracking-widest text-sm title-font font-medium text-red-400 mb-1">
-                  THE SUBTITLE
+                  Crypto prices
                 </h2>
                 <h1 className="title-font text-lg font-medium text-white mb-3">
-                  The Catalyzer
+                  Javascript, API crypto, Fetch, NextJs
                 </h1>
-                <button className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
-                  Ver Proyecto
-                </button>
+                <div className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
+                  <Link href="crypto-prices-react.vercel.app" passHref>
+                    Ver Proyecto
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 sm:w-1/2 p-4">
-            <div className="flex relative">
+          <div className="lg:w-1/3 sm:w-1/2 p-4 ">
+            <div className="flex relative h-64 w-90">
               <Image
                 layout="fill"
                 alt="gallery"
                 className="absolute inset-0 w-full h-full object-cover object-center"
-                src="/Images/proyectDefault.jpg"
+                src="/proyects/ExpensesApp.png"
               />
               <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
                 <h2 className="tracking-widest text-sm title-font font-medium text-red-400 mb-1">
-                  THE SUBTITLE
+                  Sistema de gastos, con CRUD
                 </h2>
                 <h1 className="title-font text-lg font-medium text-white mb-3">
-                  The 400 Blows
+                  PHP, Bootstrap, Roles, MySQL, Google Charts, Javascript, MVC
                 </h1>
-                <button className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
-                  Ver Proyecto
-                </button>
+                <div className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
+                  <Link
+                    href="https://github.com/ignacioedlp/SistemaDeGastos"
+                    passHref
+                  >
+                    Ver Proyecto
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 sm:w-1/2 p-4">
-            <div className="flex relative">
+          <div className="lg:w-1/3 sm:w-1/2 p-4 ">
+            <div className="flex relative h-64 w-90">
               <Image
                 layout="fill"
                 alt="gallery"
                 className="absolute inset-0 w-full h-full object-cover object-center"
-                src="/Images/proyectDefault.jpg"
+                src="/proyects/libreria-laravel.png"
               />
               <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
                 <h2 className="tracking-widest text-sm title-font font-medium text-red-400 mb-1">
-                  THE SUBTITLE
+                  CRUD Libreria
                 </h2>
                 <h1 className="title-font text-lg font-medium text-white mb-3">
-                  Neptune
+                  Laravel, Bootstrap, Laravel UI, MySQL
                 </h1>
-                <button className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
-                  Ver Proyecto
-                </button>
+                <div className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
+                  <Link
+                    href="https://github.com/ignacioedlp/libreria-laravel"
+                    passHref
+                  >
+                    Ver Proyecto
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 sm:w-1/2 p-4">
-            <div className="flex relative">
+          <div className="lg:w-1/3 sm:w-1/2 p-4 ">
+            <div className="flex relative h-64 w-90">
               <Image
                 layout="fill"
                 alt="gallery"
                 className="absolute inset-0 w-full h-full object-cover object-center"
-                src="/Images/proyectDefault.jpg"
+                src="/proyects/sistema-blogs-laravel.png"
               />
               <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
                 <h2 className="tracking-widest text-sm title-font font-medium text-red-400 mb-1">
-                  THE SUBTITLE
+                  Blog
                 </h2>
                 <h1 className="title-font text-lg font-medium text-white mb-3">
-                  Holden Caulfield
+                  Laravel, Laravel UI, roles, MySQL, Bootstrap,
+                  Laravel-permission, LaravelCollective
                 </h1>
-                <button className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
-                  Ver Proyecto
-                </button>
+                <div className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
+                  <Link
+                    href="https://github.com/ignacioedlp/blog-prisma-next/tree/main"
+                    passHref
+                  >
+                    Ver Proyecto
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 sm:w-1/2 p-4">
-            <div className="flex relative">
-              <Image
+          <div className="lg:w-1/3 sm:w-1/2 p-4 ">
+            <div className="flex relative h-64 w-90">
+              {/* <Image
                 layout="fill"
                 alt="gallery"
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 src="/Images/proyectDefault.jpg"
-              />
-              <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                <h2 className="tracking-widest text-sm title-font font-medium text-red-400 mb-1">
-                  THE SUBTITLE
+              /> */}
+              <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 ">
+                <h2 className="tracking-widest text-title title-font font-medium text-red-400 mb-1">
+                  Proximamente
                 </h2>
                 <h1 className="title-font text-lg font-medium text-white mb-3">
-                  Alper Kamu
+                  ...
                 </h1>
-                <button className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
-                  Ver Proyecto
-                </button>
               </div>
             </div>
           </div>

@@ -1,7 +1,25 @@
 import Head from "next/head";
 import Repo from "../components/Repo";
+import Link from "next/link";
 
-export default function Home() {
+export async function getStaticProps() {
+  try {
+    const res = await fetch(
+      `https://api.github.com/users/ignacioedlp/repos?per_page=100`
+    );
+    const data = await res.json();
+
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export default function Home({ data }) {
   return (
     <div>
       <Head classNameName="container mx-auto">
@@ -15,19 +33,16 @@ export default function Home() {
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
               Github repositories
             </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-              gentrify, subway tile poke farm-to-table. Franzen you probably
-              havent heard of them.
-            </p>
+            <div className="flex mx-auto m-6 text-white bg-gray-900 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
+              <Link href="https://github.com/ignacioedlp" passHref>
+                Ver GITHUB
+              </Link>
+            </div>
           </div>
           <div className="flex flex-wrap -m-2">
-            <Repo></Repo>
-            <Repo></Repo>
-            <Repo></Repo>
-            <Repo></Repo>
-            <Repo></Repo>
-            <Repo></Repo>
+            {data.map((repo) => (
+              <Repo repo={repo} key={repo.id} />
+            ))}
           </div>
         </div>
       </section>
