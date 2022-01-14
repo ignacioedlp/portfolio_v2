@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useState } from "react";
 import {
   AiFillLinkedin,
   AiFillGithub,
@@ -9,10 +10,10 @@ import { useForm } from "react-hook-form";
 
 function Contact() {
   const { register, handleSubmit, errors } = useForm();
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
-
     fetch("/api/contact", {
       method: "POST",
       headers: {
@@ -21,9 +22,12 @@ function Contact() {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      console.log("Response received");
       if (res.status === 200) {
-        console.log("Response status 200");
+        setSuccess(true);
+        console.log("Enviado");
+      } else {
+        setError(true);
+        console.log("Error");
       }
     });
   };
@@ -42,6 +46,20 @@ function Contact() {
             Enviame un mensaje si necesitas alguna consulta o informacion sobre
             costos. Ademas estoy abierto a propuestas de trabajo.
           </p>
+          {success ? (
+            <div className="bg-green-900 my-2 lg:w-1/2 md:w-2/3 mx-auto rounded border-0 py-2 px-8 text-center my-auto">
+              <strong>Mensaje enviado exitosamente</strong>
+            </div>
+          ) : (
+            false
+          )}
+          {error ? (
+            <div className="bg-red-900 my-2 lg:w-1/2 md:w-2/3 mx-auto rounded border-0 py-2 px-8 text-center my-auto">
+              <strong>Mensaje enviado exitosamente</strong>
+            </div>
+          ) : (
+            false
+          )}
         </div>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
           <form
