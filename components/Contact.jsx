@@ -1,14 +1,15 @@
-import React from "react";
 import Link from "next/link";
-import { useState } from "react";
+import { React, useContext, useState } from "react";
 import {
   AiFillLinkedin,
   AiFillGithub,
   AiOutlineInstagram,
 } from "react-icons/ai";
 import { useForm } from "react-hook-form";
+import { LenguageContext } from "../context/LenguageContext";
 
 function Contact() {
+  const { lenguage, setLenguage } = useContext(LenguageContext);
   const { register, handleSubmit, errors } = useForm();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
@@ -40,22 +41,29 @@ function Contact() {
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-200">
-            Contactame
+            {lenguage === "es" ? "Contacto" : "Contact"}
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Enviame un mensaje si necesitas alguna consulta o informacion sobre
-            costos. Ademas estoy abierto a propuestas de trabajo.
+            {lenguage === "es"
+              ? "Enviame un mensaje si necesitas alguna consulta o informacion sobre costos. Ademas estoy abierto a propuestas de trabajo."
+              : "Send me a message if you need any consultation or information about costs. Also, I am open to proposals of work."}
           </p>
           {success ? (
             <div className="bg-green-900 my-2 lg:w-1/2 md:w-2/3 mx-auto rounded border-0 py-2 px-8 text-center my-auto">
-              <strong>Mensaje enviado exitosamente</strong>
+              <strong>
+                {lenguage === "es"
+                  ? "Mensaje enviado exitosamente"
+                  : "Message sent successfully"}
+              </strong>
             </div>
           ) : (
             false
           )}
           {error ? (
             <div className="bg-red-900 my-2 lg:w-1/2 md:w-2/3 mx-auto rounded border-0 py-2 px-8 text-center my-auto">
-              <strong>Mensaje enviado exitosamente</strong>
+              <strong>
+                {lenguage === "es" ? "Mensaje fallido" : "Delivery failed"}
+              </strong>
             </div>
           ) : (
             false
@@ -72,7 +80,7 @@ function Contact() {
                   htmlFor="name"
                   className="leading-7 text-sm text-gray-200"
                 >
-                  Tu nombre
+                  {lenguage === "es" ? "Nombre" : "Name"}
                 </label>
                 <input
                   type="text"
@@ -89,7 +97,7 @@ function Contact() {
                   htmlFor="email"
                   className="leading-7 text-sm text-gray-200"
                 >
-                  Email
+                  {lenguage === "es" ? "Correo" : "Email"}
                 </label>
                 <input
                   type="email"
@@ -106,7 +114,7 @@ function Contact() {
                   htmlFor="message"
                   className="leading-7 text-sm text-gray-200"
                 >
-                  Mensaje
+                  {lenguage === "es" ? "Mensaje" : "Message"}
                 </label>
                 <textarea
                   id="message"
@@ -118,7 +126,7 @@ function Contact() {
             </div>
             <div className="p-2 w-full">
               <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Enviar mensaje
+                {lenguage === "es" ? "Enviar" : "Send"}
               </button>
             </div>
             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">

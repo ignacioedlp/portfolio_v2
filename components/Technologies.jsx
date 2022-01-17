@@ -1,4 +1,5 @@
-import React from "react";
+import {React, useContext} from "react";
+import { LenguageContext } from "../context/LenguageContext";
 
 import {
   FaBootstrap,
@@ -20,6 +21,9 @@ import {
 } from "react-icons/si";
 
 function Technologies() {
+
+  const { lenguage, setLenguage } = useContext(LenguageContext);
+
   return (
     <section
       className="text-gray-400 bg-gray-900 body-font"
@@ -28,7 +32,7 @@ function Technologies() {
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">
-            Habilidades
+            {lenguage === "es" ? "Habilidades" : "Skills"}
           </h1>
         </div>
         <div className="flex flex-wrap -m-4 justify-around">

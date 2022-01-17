@@ -1,12 +1,17 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
-
+import { LenguageContext } from "../context/LenguageContext";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
+  const [lenguage, setLenguage] = useState("es");
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <LenguageContext.Provider value={{ lenguage, setLenguage }}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </LenguageContext.Provider>
   );
 }
 

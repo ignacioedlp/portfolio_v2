@@ -1,7 +1,19 @@
-import React from "react";
+import { React, useContext } from "react";
 import Link from "next/link";
+import { LenguageContext } from "../context/LenguageContext";
 
 function Navbar() {
+  const { lenguage, setLenguage } = useContext(LenguageContext);
+
+  function handlerLenguage() {
+    if (lenguage == "es") {
+      setLenguage("en");
+      return;
+    }
+    setLenguage("es");
+    return;
+  }
+
   return (
     <header className="text-black-400 bg-red-500 body-font ">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -23,22 +35,22 @@ function Navbar() {
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           <div className="mr-5">
             <Link className=" hover:text-white" href="/">
-              Inicio
+              {lenguage == "es" ? "Inicio" : "Home"}
             </Link>
           </div>
           <div className="mr-5">
             <Link className=" hover:text-white" href="#skills">
-              Habilidades
+              {lenguage == "es" ? "Habilidades" : "Skills"}
             </Link>
           </div>
           <div className="mr-5">
             <Link className=" hover:text-white" href="#proyects">
-              Proyectos
+              {lenguage == "es" ? "Proyectos" : "Proyects"}
             </Link>
           </div>
           <div className="mr-5">
             <Link className="mr-5 hover:text-white" href="#contact">
-              Contactame
+              {lenguage == "es" ? "Contactame" : "Contact"}
             </Link>
           </div>
           <div className="mr-5">
@@ -47,6 +59,15 @@ function Navbar() {
             </Link>
           </div>
         </nav>
+        <div className="left-0">
+          <button onClick={() => handlerLenguage()}>
+            {lenguage === "es" ? (
+              <img src="https://img.icons8.com/color/30/000000/spain-2.png" />
+            ) : (
+              <img src="https://img.icons8.com/office/30/000000/great-britain.png" />
+            )}
+          </button>
+        </div>
       </div>
     </header>
   );
