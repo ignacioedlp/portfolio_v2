@@ -1,7 +1,13 @@
-import React from "react";
+import {React, useContext} from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { LenguageContext } from "../context/LenguageContext";
+
+
 function Repo({ repo }) {
+
+  const { lenguage, setLenguage } = useContext(LenguageContext);
+
   return (
     <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
       <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
