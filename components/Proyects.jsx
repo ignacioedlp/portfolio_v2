@@ -3,6 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { LenguageContext } from "../context/LenguageContext";
 
+
+export async function getStaticProps({ data }) {
+  try {
+    const res = await fetch(`https://api-portfolio-v2.vercel.app/api/posts`);
+    const data = await res.json();
+
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 function Proyects() {
   const { lenguage, setLenguage } = useContext(LenguageContext);
   return (
