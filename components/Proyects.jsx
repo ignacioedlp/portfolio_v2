@@ -16,8 +16,8 @@ function Proyects() {
         </div>
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           {proyects.map((proyect, index) => (
-            <div className="lg:w-1/3 sm:w-1/2 p-4 " key={index}>
-              <div className="flex relative h-64">
+            <div className="lg:w-2/6 sm:w-1/2 py-2 px-2" key={index}>
+              <div className="flex relative h-64 ">
                 <Image
                   layout="fill"
                   alt="gallery"

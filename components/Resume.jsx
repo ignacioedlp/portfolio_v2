@@ -41,8 +41,8 @@ function Resume() {
                   <span className="flex-grow flex flex-col pl-4">
                     <span className="title-font font-medium text-gray-100">
                       {lenguage === "es"
-                        ? "Analista Programador <br/> Licenciado en Informatica"
-                        : "Programmer Analyst <br /> Bachelors Degree in Computer Science"}
+                        ? "Analista Programador - Licenciado en Informatica"
+                        : "Programmer Analyst  Bachelors Degree in Computer Science"}
                     </span>
                     <span className="text-gray-300 text-sm">
                       2020 - {lenguage === "es" ? "Ahora" : "Now"}{" "}

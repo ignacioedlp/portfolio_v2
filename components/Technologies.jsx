@@ -18,6 +18,7 @@ import {
   SiNextdotjs,
   SiJavascript,
   SiExpress,
+  SiSolidity,
 } from "react-icons/si";
 
 function Technologies() {
@@ -32,7 +33,7 @@ function Technologies() {
           </h1>
         </div>
         <div className="flex flex-wrap -m-4 justify-around">
-          <div className="p-4 lg:w-1/4 sm:w-1/2 w-full mb-3">
+          <div className="pb-4 lg:w-1/5 sm:w-1/2 w-full mb-3 ">
             <h2 className="underline font-medium title-font tracking-widest text-white mb-4 text-sm text-center sm:text-left">
               FRONTEND
             </h2>
@@ -59,7 +60,7 @@ function Technologies() {
               </div>
             </nav>
           </div>
-          <div className="p-4 lg:w-1/4 sm:w-1/2 w-full mb-3">
+          <div className="pb-4 lg:w-1/5 sm:w-1/2 w-full mb-3">
             <h2 className="underline font-medium title-font tracking-widest text-white mb-4 text-sm text-center sm:text-left">
               BACKEND
             </h2>
@@ -82,7 +83,7 @@ function Technologies() {
               </div>
             </nav>
           </div>
-          <div className="p-4 lg:w-1/4 sm:w-1/2 w-full mb-3">
+          <div className="pb-4 lg:w-1/5 sm:w-1/2 w-full mb-3">
             <h2 className=" underline font-medium title-font tracking-widest text-white mb-4 text-sm text-center sm:text-left">
               DATABASES
             </h2>
@@ -103,7 +104,7 @@ function Technologies() {
               </nav>
             </nav>
           </div>
-          <div className="p-4 lg:w-1/4 sm:w-1/2 w-full mb-3 ">
+          <div className="pb-4 lg:w-1/5 sm:w-1/2 w-full mb-3 ">
             <h2 className=" underline font-medium title-font tracking-widest text-white mb-4 text-sm text-center sm:text-left">
               EXTRAS
             </h2>
@@ -122,6 +123,17 @@ function Technologies() {
                   <a className="text-2xl ml-1">NextJS</a>
                 </div>
               </nav>
+            </nav>
+          </div>
+          <div className="pb-4 lg:w-1/5 sm:w-1/2 w-full mb-3">
+            <h2 className="underline font-medium title-font tracking-widest text-white mb-4 text-sm text-center sm:text-left">
+              BLOCKCHAIN
+            </h2>
+            <nav className="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2">
+              <div className="flex-inline flex ">
+                <SiSolidity className="text-3xl" />
+                <a className="text-2xl ml-1">Solidity</a>
+              </div>
             </nav>
           </div>
         </div>
