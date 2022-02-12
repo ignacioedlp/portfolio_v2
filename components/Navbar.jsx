@@ -1,6 +1,7 @@
-import { React, useContext } from "react";
+import { React, useContext, useState } from "react";
 import Link from "next/link";
 import { LenguageContext } from "../context/LenguageContext";
+import { findFlagUrlByNationality } from "country-flags-svg";
 
 function Navbar() {
   const { lenguage, setLenguage } = useContext(LenguageContext);
@@ -14,62 +15,87 @@ function Navbar() {
     return;
   }
 
+  const [menuActive, setMenuActive] = useState(true);
+
+  const handleMenu = (e) => {
+    e.preventDefault();
+    setMenuActive(!menuActive);
+  };
+
   return (
-    <header className="text-black-400 bg-red-500 body-font ">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-red-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <span className="ml-3 text-xl">Ignacio</span>
-        </a>
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <div className="mr-5">
-            <Link className=" hover:text-white" href="/">
-              {lenguage == "es" ? "Inicio" : "Home"}
-            </Link>
+    <div>
+      <nav className="text-black-400 bg-red-500 body-font ">
+        <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300">
+              <Link href="#">Ignacio</Link>
+            </div>
+
+            <div className="flex md:hidden">
+              <button
+                type="button"
+                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                aria-label="toggle menu"
+                onClick={handleMenu}
+              >
+                <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
+                  <path
+                    fillRule="evenodd"
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
-          <div className="mr-5">
-            <Link className=" hover:text-white" href="#skills">
-              {lenguage == "es" ? "Habilidades" : "Skills"}
-            </Link>
-          </div>
-          <div className="mr-5">
-            <Link className=" hover:text-white" href="#proyects">
-              {lenguage == "es" ? "Proyectos" : "Proyects"}
-            </Link>
-          </div>
-          <div className="mr-5">
-            <Link className="mr-5 hover:text-white" href="#contact">
-              {lenguage == "es" ? "Contactame" : "Contact"}
-            </Link>
-          </div>
-          <div className="mr-5">
-            <Link className="mr-5 hover:text-white" href="/github">
-              Github
-            </Link>
-          </div>
-        </nav>
-        <div className="left-0">
-          <button onClick={() => handlerLenguage()}>
-            {lenguage === "es" ? (
-              <img src="https://img.icons8.com/color/30/000000/spain-2.png" />
-            ) : (
-              <img src="https://img.icons8.com/office/30/000000/great-britain.png" />
-            )}
-          </button>
+          {menuActive ? (
+            <div className="items-center md:flex" id="menu">
+              <div className="flex flex-col md:flex-row md:mx-6">
+                <div className="mr-5">
+                  <Link className=" hover:text-white" href="/">
+                    {lenguage == "es" ? "Inicio" : "Home"}
+                  </Link>
+                </div>
+                <div className="mr-5">
+                  <Link className=" hover:text-white" href="#skill">
+                    {lenguage == "es" ? "Habilidades" : "Skills"}
+                  </Link>
+                </div>
+                <div className="mr-5">
+                  <Link className=" hover:text-white" href="#proyects">
+                    {lenguage == "es" ? "Proyectos" : "Proyects"}
+                  </Link>
+                </div>
+                <div className="mr-5">
+                  <Link className="mr-5 hover:text-white" href="#contact">
+                    {lenguage == "es" ? "Contactame" : "Contact"}
+                  </Link>
+                </div>
+                <div className="mr-5">
+                  <Link className="mr-5 hover:text-white" href="/github">
+                    Github
+                  </Link>
+                </div>
+              </div>
+              <div className="flex justify-center md:block">
+                <button onClick={() => handlerLenguage()}>
+                  {lenguage === "es" ? (
+                    <img
+                      width="40"
+                      src={findFlagUrlByNationality("Argentinian")}
+                    />
+                  ) : (
+                    <img
+                      width="40"
+                      src={findFlagUrlByNationality("American")}
+                    />
+                  )}
+                </button>
+              </div>
+            </div>
+          ) : null}
         </div>
-      </div>
-    </header>
+      </nav>
+    </div>
   );
 }
 

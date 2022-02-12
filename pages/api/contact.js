@@ -3,11 +3,11 @@ let nodemailer = require("nodemailer");
 
 export default async function handler(req, res) {
   let transporter = nodemailer.createTransport({
-    host: process.env.HOST,
-    port: process.env.PORT,
+    host: process.env.HOSTMAIL,
+    port: process.env.PORTMAIL,
     auth: {
-      user: process.env.USER,
-      pass: process.env.PASS,
+      user: process.env.USERMAIL,
+      pass: process.env.PASSMAIL,
     },
   });
 
