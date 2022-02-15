@@ -70,4 +70,14 @@ export const proyects = [
     image: "/proyects/Dapp_Proyect.png",
     link: "https://github.com/ignacioedlp/task_contract_solidity",
   },
+  {
+    title: {
+      es: "Clon de Opensea",
+      en: "Opensea clone",
+    },
+    description: "Tailwind, Next.js, React, Sanity, Thirdweb",
+
+    image: "/proyects/opensea.png",
+    link: "https://opensea-blockchain-eight.vercel.app",
+  },
 ];
