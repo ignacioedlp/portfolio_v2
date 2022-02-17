@@ -80,4 +80,14 @@ export const proyects = [
     image: "/proyects/opensea.png",
     link: "https://opensea-blockchain-eight.vercel.app",
   },
+  {
+    title: {
+      es: "Clon de Uniswap",
+      en: "Uniswap clone",
+    },
+    description: "Tailwind, Next.js, React, Sanity, solidity, hardhat",
+
+    image: "/proyects/uniswap.png",
+    link: "https://vercel.com/ignacioedlp/uniswap-blockchain-clone",
+  },
 ];
