@@ -4,6 +4,8 @@ import Link from "next/link";
 import { LenguageContext } from "../context/LenguageContext";
 import { proyects } from "../data/proyects";
 
+
+
 function Proyects() {
   const { lenguage, setLenguage } = useContext(LenguageContext);
   return (
