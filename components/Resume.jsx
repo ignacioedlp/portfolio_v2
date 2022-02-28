@@ -1,4 +1,5 @@
-import { React, useContext } from "react";
+import { React, useContext, useEffect } from "react";
+
 import { LenguageContext } from "../context/LenguageContext";
 
 function Resume() {
@@ -10,7 +11,7 @@ function Resume() {
         <h2 className="text-4xl title-font mb-4 text-center text-gray-900">
           {lenguage === "es" ? "Sobre mi" : "About me"}
         </h2>
-        <div className="flex flex-wrap -m-4">
+        <div className="flex flex-wrap -m-4 resumen">
           <div className="p-4 md:w-1/2 w-full">
             <div className="h-full bg-gray-700 p-8 rounded">
               <h2 className="text-gray-100 text-3xl title-font font-medium mb-4 ">
