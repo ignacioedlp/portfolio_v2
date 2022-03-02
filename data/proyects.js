@@ -90,4 +90,14 @@ export const proyects = [
     image: "/proyects/githubprofile.png",
     link: "https://github-porfile-search.vercel.app",
   },
+    {
+    title:{
+      es: "Clon de Uniswap",
+      en: "Uniswap clone",
+    },
+    description: "Tailwind, Next.js, React, Sanity, solidity, hardhat",
+
+    image: "/proyects/uniswap.png",
+    link: "https://vercel.com/ignacioedlp/uniswap-blockchain-clone",
+  },
 ];
