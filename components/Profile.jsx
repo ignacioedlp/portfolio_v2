@@ -9,14 +9,12 @@ function Profile() {
     <section className="text-gray-400 bg-gray-900 body-font ">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <div className="animate__animated animate__backInLeft  lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center ">
-          <div className="  ">
-            <h1 className="title-font  sm:text-4xl text-3xl mb-4 font-medium text-white">
-              {lenguage == "es"
-                ? //agregar un salto de linea en los dos textos
-                  "Hola soy Ignacio, Desarrollador FullStack Jr."
-                : "Hello I'm Ignacio, Junior FullStack Developer"}
-            </h1>
-          </div>
+          <h1 className="title-font  sm:text-4xl text-3xl mb-4 font-medium text-white">
+            {lenguage == "es"
+              ? "Hola soy Ignacio, Desarrollador FullStack Jr."
+              : "Hello I'm Ignacio, Junior FullStack Developer"}
+          </h1>
+
           <p className="mb-8 leading-relaxed">
             {lenguage == "es"
               ? "Con capacidad de pensar nuevas ideas e implementar mejoras. Soy detallista y ordenado con los proyectos queme propongo"
