@@ -80,4 +80,14 @@ export const proyects = [
     image: "/proyects/opensea.png",
     link: "https://opensea-blockchain-eight.vercel.app",
   },
+  {
+    title: {
+      es: "Github Finder",
+      en: "Github Finder",
+    },
+    description: "Tailwind, Next.js, React",
+
+    image: "/proyects/githubprofile.png",
+    link: "https://github-porfile-search.vercel.app",
+  },
 ];
