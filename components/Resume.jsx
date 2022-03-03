@@ -1,10 +1,6 @@
-import { React, useContext, useEffect } from "react";
+import  React  from "react";
 
-import { LenguageContext } from "../context/LenguageContext";
-
-function Resume() {
-  const { lenguage, setLenguage } = useContext(LenguageContext);
-
+function Resume({ lenguage }) {
   return (
     <section className="text-gray-600 body-font bg-gray-900">
       <div className="container px-5 py-24 mx-auto">

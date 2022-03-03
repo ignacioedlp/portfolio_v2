@@ -1,13 +1,9 @@
-import { React, useContext } from "react";
+import { React } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LenguageContext } from "../context/LenguageContext";
-import { proyects } from "../data/proyects";
+// import { proyects } from "../data/proyects";
 
-
-
-function Proyects() {
-  const { lenguage, setLenguage } = useContext(LenguageContext);
+function Proyects({ lenguage, proyects }) {
   return (
     <section className="text-gray-400 bg-gray-900 body-font" id="proyects">
       <div className="container px-5 py-24 mx-auto">
@@ -20,15 +16,14 @@ function Proyects() {
           {proyects.map((proyect, index) => (
             <div className="lg:w-2/6 sm:w-1/2 py-2 px-2" key={index}>
               <div className="flex relative h-64 ">
-                <Image
-                  layout="fill"
+                <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src={proyect.image}
                 />
                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
                   <h2 className="tracking-widest text-sm title-font font-medium text-red-400 mb-1">
-                    {lenguage === "es" ? proyect.title.es : proyect.title.en}
+                    {lenguage === "es" ? proyect.titleEs : proyect.titleEn}
                   </h2>
                   <h1 className="title-font text-lg font-medium text-white mb-3">
                     NextJs, NextAuth, Tailwind & PostgreSQL

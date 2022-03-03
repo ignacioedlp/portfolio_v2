@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Repo from "../components/Repo";
 import Link from "next/link";
+import { useContext } from "react";
+import { PortfolioContext } from "../context/PortfolioContext";
 
 export async function getStaticProps() {
   try {
@@ -20,6 +22,9 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
+
+  const { lenguage } = useContext(PortfolioContext);
+
   return (
     <div>
       <Head classNameName="container mx-auto">

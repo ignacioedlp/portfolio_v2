@@ -1,12 +1,10 @@
-import {React, useContext} from "react";
+import {React} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LenguageContext } from "../context/LenguageContext";
 
 
-function Repo({ repo }) {
+function Repo({ repo, lenguage }) {
 
-  const { lenguage, setLenguage } = useContext(LenguageContext);
 
   return (
     <div className="p-2 lg:w-1/3 md:w-1/2 w-full">

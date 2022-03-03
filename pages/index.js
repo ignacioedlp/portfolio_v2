@@ -4,8 +4,16 @@ import Technologies from "../components/Technologies";
 import Proyects from "../components/Proyects";
 import Contact from "../components/Contact";
 import Resume from "../components/Resume";
+import { useContext, useEffect } from "react";
+import { PortfolioContext } from "../context/PortfolioContext";
 
 export default function Home() {
+  const { lenguage, proyects } = useContext(PortfolioContext);
+
+  useEffect(() => {
+    console.log(proyects);
+  }, [proyects]);
+
   return (
     <div>
       <Head className="container mx-auto">
@@ -14,11 +22,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Profile></Profile>
-      <Resume></Resume>
-      <Technologies></Technologies>
-      <Proyects></Proyects>
-      <Contact></Contact>
+      <Profile lenguage={lenguage}></Profile>
+      <Resume lenguage={lenguage}></Resume>
+      <Technologies lenguage={lenguage}></Technologies>
+      <Proyects lenguage={lenguage} proyects={proyects}></Proyects>
+      <Contact lenguage={lenguage}></Contact>
     </div>
   );
 }

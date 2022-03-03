@@ -1,9 +1,7 @@
-import { React, useContext } from "react";
+import { React } from "react";
 import Image from "next/image";
-import { LenguageContext } from "../context/LenguageContext";
 
-function Profile() {
-  const { lenguage, setLenguage } = useContext(LenguageContext);
+function Profile({ lenguage }) {
 
   return (
     <section className="text-gray-400 bg-gray-900 body-font ">

@@ -1,5 +1,4 @@
-import { React, useContext } from "react";
-import { LenguageContext } from "../context/LenguageContext";
+import { React } from "react";
 
 import {
   FaBootstrap,
@@ -21,9 +20,7 @@ import {
   SiSolidity,
 } from "react-icons/si";
 
-function Technologies() {
-  const { lenguage, setLenguage } = useContext(LenguageContext);
-
+function Technologies({ lenguage }) {
   return (
     <section className="text-gray-400 bg-gray-900 body-font" id="skill">
       <div className="container px-5 py-24 mx-auto">
