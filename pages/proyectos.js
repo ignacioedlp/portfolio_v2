@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { React, useContext } from "react";
 import Image from "next/image";
-import { LenguageContext } from "../context/LenguageContext";
+import { PortfolioContext } from "../context/PortfolioContext";
 
 export async function getStaticProps() {
   try {
@@ -20,8 +20,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
-
-  const { lenguage, setLenguage } = useContext(LenguageContext);
+  const { lenguage } = useContext(PortfolioContext);
 
   return (
     <div>
