@@ -1,15 +1,13 @@
 import Link from "next/link";
-import { React, useContext, useState } from "react";
+import { React, useState } from "react";
 import {
   AiFillLinkedin,
   AiFillGithub,
   AiOutlineInstagram,
 } from "react-icons/ai";
 import { useForm } from "react-hook-form";
-import { LenguageContext } from "../context/LenguageContext";
 
-function Contact() {
-  const { lenguage, setLenguage } = useContext(LenguageContext);
+function Contact({ lenguage }) {
   const { register, handleSubmit, errors } = useForm();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);

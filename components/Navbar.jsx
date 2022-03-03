@@ -1,10 +1,10 @@
 import { React, useContext, useState } from "react";
 import Link from "next/link";
-import { LenguageContext } from "../context/LenguageContext";
+import { PortfolioContext } from "../context/PortfolioContext";
 import { findFlagUrlByNationality } from "country-flags-svg";
 
 function Navbar() {
-  const { lenguage, setLenguage } = useContext(LenguageContext);
+  const { lenguage, setLenguage } = useContext(PortfolioContext);
 
   function handlerLenguage() {
     if (lenguage == "es") {
