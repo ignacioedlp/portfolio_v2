@@ -77,8 +77,11 @@ function Navbar() {
                   </Link>
                 </div>
               </div>
-              <div className="flex justify-center md:block">
-                <button onClick={() => handlerLenguage()}>
+              <div className="flex justify-center md:block w-[40px] h-[30px]">
+                <button
+                  onClick={() => handlerLenguage()}
+                  className="w-[40px] h-[30px]"
+                >
                   {lenguage === "es" ? (
                     <Image
                       alt="es"
