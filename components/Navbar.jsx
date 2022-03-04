@@ -2,6 +2,7 @@ import { React, useContext, useState } from "react";
 import Link from "next/link";
 import { PortfolioContext } from "../context/PortfolioContext";
 import { findFlagUrlByNationality } from "country-flags-svg";
+import Image from "next/image";
 
 function Navbar() {
   const { lenguage, setLenguage } = useContext(PortfolioContext);
@@ -79,13 +80,17 @@ function Navbar() {
               <div className="flex justify-center md:block">
                 <button onClick={() => handlerLenguage()}>
                   {lenguage === "es" ? (
-                    <img
-                      width="40"
+                    <Image
+                      alt="es"
+                      width="40px"
+                      height="30px"
                       src={findFlagUrlByNationality("Argentinian")}
                     />
                   ) : (
-                    <img
-                      width="40"
+                    <Image
+                      alt="en"
+                      width="40px"
+                      height="30px"
                       src={findFlagUrlByNationality("American")}
                     />
                   )}

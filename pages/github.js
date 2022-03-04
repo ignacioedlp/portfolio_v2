@@ -22,7 +22,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
-
   const { lenguage } = useContext(PortfolioContext);
 
   return (
