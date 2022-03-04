@@ -1,6 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["unsplash.com"],
+    domains: ["cdn.sanity.io", "upload.wikimedia.org"],
+    formats: ["image/webp"],
   },
 };

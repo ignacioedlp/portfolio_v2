@@ -16,8 +16,9 @@ function Proyects({ lenguage, proyects }) {
           {proyects.map((proyect, index) => (
             <div className="lg:w-2/6 sm:w-1/2 py-2 px-2" key={index}>
               <div className="flex relative h-64 ">
-                <img
-                  alt="gallery"
+                <Image
+                  layout="fill"
+                  alt={proyect.title}
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src={proyect.image}
                 />
