@@ -18,7 +18,7 @@ function Proyects({ lenguage, proyects }) {
               <div className="flex relative h-64 ">
                 <Image
                   layout="fill"
-                  alt={proyect.title}
+                  alt={lenguage === "es" ? proyect.titleEs : proyect.titleEn}
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src={proyect.image}
                 />
