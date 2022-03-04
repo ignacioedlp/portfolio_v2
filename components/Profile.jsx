@@ -2,7 +2,6 @@ import { React } from "react";
 import Image from "next/image";
 
 function Profile({ lenguage }) {
-
   return (
     <section className="text-gray-400 bg-gray-900 body-font ">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -40,7 +39,7 @@ function Profile({ lenguage }) {
             height="500px"
             className="object-cover object-center rounded "
             alt="hero"
-            src="/miFoto.png"
+            src="/miFoto.webp"
           />
         </div>
       </div>
