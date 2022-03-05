@@ -1,0 +1,12 @@
+{
+    "theme_color": "#4a90e2",
+    "background_color": "#4a90e2",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Ignacio",
+    "short_name": "Ignacio",
+    "icons": {
+        "name": "favicon.ico"
+    }
+}
