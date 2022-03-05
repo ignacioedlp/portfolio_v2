@@ -34,9 +34,7 @@ function Profile({ lenguage }) {
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 animate__animated animate__backInRight">
-          <Image
-            width="500px"
-            height="500px"
+          <img
             className="object-cover object-center rounded "
             alt="hero"
             src="/miFoto.webp"
