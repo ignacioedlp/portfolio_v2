@@ -77,7 +77,7 @@ function Navbar() {
                   </Link>
                 </div>
               </div>
-              <div className="flex justify-center md:block w-[40px] h-[30px]">
+              <div className="flex justify-center md:block ">
                 <button
                   onClick={() => handlerLenguage()}
                   className="w-[40px] h-[30px]"

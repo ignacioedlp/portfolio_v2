@@ -7,10 +7,25 @@ export const PortfolioProvider = ({ children }) => {
   const [proyects, setProyect] = useState([]);
   const [loading, setLoading] = useState(true);
   const [lenguage, setLenguage] = useState("es");
+  const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
     fetchProyects();
+    fetchRepositories();
   }, []);
+
+  const fetchRepositories = async () => {
+    try {
+      const res = await fetch(
+        `https://api.github.com/users/ignacioedlp/repos?per_page=100`
+      );
+      const data = await res.json();
+
+      setRepositories(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const fetchProyects = async () => {
     //QUERY QROQ SANINY GET ALL PROYECTS
@@ -46,6 +61,7 @@ export const PortfolioProvider = ({ children }) => {
         loading,
         lenguage,
         setLenguage,
+        repositories,
       }}
     >
       {children}
