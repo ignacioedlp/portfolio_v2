@@ -1,11 +1,7 @@
-const withPWA = require("next-pwa");
-module.exports = withPWA({
-  pwa: {
-    dest: "public",
-  },
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: ["cdn.sanity.io", "upload.wikimedia.org"],
     formats: ["image/webp"],
   },
-});
+};
