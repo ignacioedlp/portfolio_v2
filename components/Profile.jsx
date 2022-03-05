@@ -20,7 +20,7 @@ function Profile({ lenguage }) {
           <div className="flex justify-center">
             <a
               href="#contact"
-              className=" animate__animated  animate__shakeY inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
+              className=" animate__animated  animate__shakeY inline-flex text-white bg-red-700 border-0 py-2 px-6  focus:outline-none hover:bg-red-600 rounded text-lg font-medium"
             >
               {lenguage == "es" ? "Contactame" : "Contact me"}
             </a>
@@ -38,6 +38,8 @@ function Profile({ lenguage }) {
             className="object-cover object-center rounded "
             alt="hero"
             src="/miFoto.webp"
+            height={500}
+            width={500}
           />
         </div>
       </div>
