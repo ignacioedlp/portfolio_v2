@@ -37,23 +37,23 @@ function Technologies({ lenguage }) {
             <nav className="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2">
               <div className="flex-inline flex ">
                 <FaReact className="text-3xl" />
-                <a className="text-lg ml-1">React</a>
+                <p className="text-lg ml-1">React</p>
               </div>
               <div className="flex-inline flex">
                 <FaHtml5 className="text-3xl" />
-                <a className="text-lg ml-1">HTML</a>
+                <p className="text-lg ml-1">HTML</p>
               </div>
               <div className="flex-inline flex">
                 <FaCss3 className="text-3xl" />
-                <a className="text-lg ml-1">CSS3</a>
+                <p className="text-lg ml-1">CSS3</p>
               </div>
               <div className="flex-inline flex">
                 <SiJavascript className="text-3xl" />
-                <a className="text-lg ml-1"> Javascript</a>
+                <p className="text-lg ml-1"> Javascript</p>
               </div>
               <div className="flex-inline flex">
                 <DiJqueryLogo className="text-3xl" />
-                <a className="text-lg ml-1"> JQuery</a>
+                <p className="text-lg ml-1"> JQuery</p>
               </div>
             </nav>
           </div>
@@ -64,19 +64,19 @@ function Technologies({ lenguage }) {
             <nav className="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2">
               <div className="flex-inline flex">
                 <SiNodedotjs className="text-3xl" />
-                <a className="text-lg ml-1">NodeJS</a>
+                <p className="text-lg ml-1">NodeJS</p>
               </div>
               <div className="flex-inline flex">
                 <SiPhp className="text-3xl" />
-                <a className="text-lg ml-1">PHP</a>
+                <p className="text-lg ml-1">PHP</p>
               </div>
               <div className="flex-inline flex">
                 <FaLaravel className="text-3xl" />
-                <a className="text-lg ml-1">Laravel</a>
+                <p className="text-lg ml-1">Laravel</p>
               </div>
               <div className="flex-inline flex">
                 <SiExpress className="text-3xl" />
-                <a className="text-lg ml-1">Express</a>
+                <p className="text-lg ml-1">Express</p>
               </div>
             </nav>
           </div>
@@ -88,15 +88,15 @@ function Technologies({ lenguage }) {
               <nav className="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2">
                 <div className="flex-inline flex">
                   <DiMongodb className="text-3xl" />
-                  <a className="text-lg ml-1">MongoDB</a>
+                  <p className="text-lg ml-1">MongoDB</p>
                 </div>
                 <div className="flex-inline flex">
                   <DiMysql className="text-3xl" />
-                  <a className="text-lg ml-1">MySQL</a>
+                  <p className="text-lg ml-1">MySQL</p>
                 </div>
                 <div className="flex-inline flex">
                   <SiPostgresql className="text-3xl" />
-                  <a className="text-lg ml-1">PostgreSQL</a>
+                  <p className="text-lg ml-1">PostgreSQL</p>
                 </div>
               </nav>
             </nav>
@@ -109,15 +109,15 @@ function Technologies({ lenguage }) {
               <nav className="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2">
                 <div className="flex-inline flex">
                   <DiGit className="text-3xl" />
-                  <a className="text-lg ml-1">GIT</a>
+                  <p className="text-lg ml-1">GIT</p>
                 </div>
                 <div className="flex-inline flex">
                   <FaBootstrap className="text-3xl" />
-                  <a className="text-lg ml-1">Bootstrap</a>
+                  <p className="text-lg ml-1">Bootstrap</p>
                 </div>
                 <div className="flex-inline flex">
                   <SiNextdotjs className="text-3xl" />
-                  <a className="text-lg ml-1">NextJS</a>
+                  <p className="text-lg ml-1">NextJS</p>
                 </div>
               </nav>
             </nav>
@@ -129,7 +129,7 @@ function Technologies({ lenguage }) {
             <nav className="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2">
               <div className="flex-inline flex ">
                 <SiSolidity className="text-3xl" />
-                <a className="text-lg ml-1">Solidity</a>
+                <p className="text-lg ml-1">Solidity</p>
               </div>
             </nav>
           </div>

@@ -1,4 +1,4 @@
-import  React  from "react";
+import React from "react";
 
 function Resume({ lenguage }) {
   return (
@@ -19,14 +19,14 @@ function Resume({ lenguage }) {
                     ? "Colegio San Jose de La Plata"
                     : "San Jose de La Plata School"}
                 </h3>
-                <a className="inline-flex items-center">
+                <p className="inline-flex items-center">
                   <span className="flex-grow flex flex-col pl-4">
                     <span className="title-font font-medium text-gray-100">
                       {lenguage === "es" ? "Bachillerato" : "High School"}
                     </span>
                     <span className="text-gray-300 text-sm">2005 - 2020 </span>
                   </span>
-                </a>
+                </p>
               </div>
               <div className="p-2">
                 <h3 className="text-gray-100 text-xl title-font font-medium mb-3">
@@ -34,7 +34,7 @@ function Resume({ lenguage }) {
                     ? "Universidad Nacional de La Plata"
                     : "National University of La Plata"}
                 </h3>
-                <a className="inline-flex items-center">
+                <p className="inline-flex items-center">
                   <span className="flex-grow flex flex-col pl-4">
                     <span className="title-font font-medium text-gray-100">
                       {lenguage === "es"
@@ -45,7 +45,7 @@ function Resume({ lenguage }) {
                       2020 - {lenguage === "es" ? "Ahora" : "Now"}{" "}
                     </span>
                   </span>
-                </a>
+                </p>
               </div>
             </div>
           </div>
