@@ -51,28 +51,43 @@ function Navbar() {
           {menuActive ? (
             <div className="items-center md:flex" id="menu">
               <div className="flex flex-col md:flex-row md:mx-6">
-                <div className="mr-5">
-                  <Link className=" hover:text-white" href="/">
+                <div className="mr-5 font-semibold">
+                  <Link
+                    className=" hover:text-white  w-[48px] h-[48px]  "
+                    href="/"
+                  >
                     {lenguage == "es" ? "Inicio" : "Home"}
                   </Link>
                 </div>
-                <div className="mr-5">
-                  <Link className=" hover:text-white" href="#skill">
+                <div className="mr-5 font-semibold">
+                  <Link
+                    className=" hover:text-white w-[48px] h-[48px]"
+                    href="#skill"
+                  >
                     {lenguage == "es" ? "Habilidades" : "Skills"}
                   </Link>
                 </div>
-                <div className="mr-5">
-                  <Link className=" hover:text-white" href="#proyects">
+                <div className="mr-5 font-semibold">
+                  <Link
+                    className=" hover:text-white w-[48px] h-[48px]"
+                    href="#proyects"
+                  >
                     {lenguage == "es" ? "Proyectos" : "Proyects"}
                   </Link>
                 </div>
-                <div className="mr-5">
-                  <Link className="mr-5 hover:text-white" href="#contact">
+                <div className="mr-5 font-semibold">
+                  <Link
+                    className="mr-5 hover:text-white w-[48px] h-[48px]"
+                    href="#contact"
+                  >
                     {lenguage == "es" ? "Contactame" : "Contact"}
                   </Link>
                 </div>
-                <div className="mr-5">
-                  <Link className="mr-5 hover:text-white" href="/github">
+                <div className="mr-5 font-semibold">
+                  <Link
+                    className="mr-5 hover:text-white w-[48px] h-[48px]"
+                    href="/github"
+                  >
                     Github
                   </Link>
                 </div>
@@ -80,7 +95,7 @@ function Navbar() {
               <div className="flex justify-center md:block ">
                 <button
                   onClick={() => handlerLenguage()}
-                  className="w-[40px] h-[30px]"
+                  className="w-[48px] h-[48px]"
                 >
                   {lenguage === "es" ? (
                     <Image
