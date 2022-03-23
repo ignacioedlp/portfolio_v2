@@ -49,7 +49,11 @@ function Navbar() {
             </div>
           </div>
           {menuActive ? (
-            <div className="items-center md:flex" id="menu">
+            <div
+              className="items-center md:flex"
+              id="menu"
+              animate={{ opacity: 1, x: 0 }}
+            >
               <div className="flex flex-col md:flex-row md:mx-6">
                 <div className="mr-5 font-semibold">
                   <Link
