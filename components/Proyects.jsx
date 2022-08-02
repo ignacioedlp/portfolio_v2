@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import { proyects } from "../data/proyects";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Proyects({ lenguage, proyects }) {
@@ -34,7 +33,7 @@ function Proyects({ lenguage, proyects }) {
                     {lenguage === "es" ? proyect.titleEs : proyect.titleEn}
                   </motion.h2>
                   <motion.h1 className="title-font text-lg font-medium text-white mb-3">
-                    NextJs, NextAuth, Tailwind & PostgreSQL
+                    {proyect.subtitle || ""}
                   </motion.h1>
                   <motion.div className="flex mx-auto m-6 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">
                     <Link href={proyect.link} passHref>

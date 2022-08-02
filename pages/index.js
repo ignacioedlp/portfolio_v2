@@ -9,11 +9,6 @@ import { PortfolioContext } from "../context/PortfolioContext";
 
 export default function Home() {
   const { lenguage, proyects } = useContext(PortfolioContext);
-
-  useEffect(() => {
-    console.log(proyects);
-  }, [proyects]);
-
   return (
     <div>
       <Head className="container mx-auto">

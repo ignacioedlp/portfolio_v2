@@ -30,24 +30,29 @@ export const PortfolioProvider = ({ children }) => {
   const fetchProyects = async () => {
     //QUERY QROQ SANINY GET ALL PROYECTS
     const query = `
-      *[_type == "proyects"]{
-        "titleEs": titleEs,
-        "titleEn": titleEn,
-        "description": description,
-        "image": image.asset->url,
+      *[_type == "proyect"]{
+        "title": title,
+        "subtitle": subtitle,
+        "body":body,
+        "techs": techs,
+        "image": mainImage.asset->url,
         "link": link
       }
     `;
+
     const sanityResponse = await client.fetch(query);
+
+    console.log(sanityResponse);
+
     setProyect([]);
 
     sanityResponse.forEach((proyect) => {
       let newItem = {
-        titleEs: proyect.titleEs,
-        titleEn: proyect.titleEn,
-        description: proyect.description,
+        titleEs: proyect.title,
+        titleEn: proyect.title,
+        description: proyect.subtitle,
         image: proyect.image,
-        link: proyect.link,
+        link: proyect.link || "/",
       };
 
       setProyect((prevProyects) => [...prevProyects, newItem]);
