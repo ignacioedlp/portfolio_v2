@@ -19,8 +19,8 @@ function Resume({ lenguage, information }) {
                 <h2 className="text-gray-100 text-3xl title-font font-medium mb-4 ">
                   {lenguage === "es" ? "Educacion" : "Education"}
                 </h2>
-                {information.education.map((education) => (
-                  <div className="p-2">
+                {information.education.map((education, index) => (
+                  <div className="p-2" key={index}>
                     <h3 className="text-gray-100 text-xl title-font font-medium mb-3">
                       {education.site}
                     </h3>

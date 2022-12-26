@@ -53,7 +53,7 @@ function Profile({ lenguage, information }) {
           transition={{ duration: 1, ease: "easeOut" }}
           className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6"
         >
-          <img
+          <Image
             className="object-cover object-center rounded  "
             alt="hero"
             src="/miFoto.webp"
