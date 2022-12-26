@@ -1,9 +1,15 @@
 const withPWA = require("next-pwa");
 
 module.exports = withPWA({
+  experimental: {
+    appDir: true,
+  },
   reactStrictMode: true,
   images: {
-    domains: ["cdn.sanity.io", "upload.wikimedia.org"],
+    domains: [
+      "portfolio-cms-production.up.railway.app",
+      "upload.wikimedia.org",
+    ],
     formats: ["image/webp"],
   },
   pwa: {

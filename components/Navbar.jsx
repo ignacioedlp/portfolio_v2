@@ -104,15 +104,15 @@ function Navbar() {
                   {lenguage === "es" ? (
                     <Image
                       alt="es"
-                      width="40px"
-                      height="30px"
+                      width="40"
+                      height="30"
                       src={findFlagUrlByNationality("Argentinian")}
                     />
                   ) : (
                     <Image
                       alt="en"
-                      width="40px"
-                      height="30px"
+                      width="40"
+                      height="30"
                       src={findFlagUrlByNationality("American")}
                     />
                   )}

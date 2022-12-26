@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { client } from "../libs/client";
 
 export const PortfolioContext = createContext();
 
@@ -8,10 +7,14 @@ export const PortfolioProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [lenguage, setLenguage] = useState("es");
   const [repositories, setRepositories] = useState([]);
+  const [information, setInformation] = useState(null);
+  const [skills, setSkills] = useState([]);
 
   useEffect(() => {
     fetchProyects();
     fetchRepositories();
+    fetchInformation();
+    fetchSkills();
   }, []);
 
   const fetchRepositories = async () => {
@@ -28,35 +31,79 @@ export const PortfolioProvider = ({ children }) => {
   };
 
   const fetchProyects = async () => {
-    //QUERY QROQ SANINY GET ALL PROYECTS
-    const query = `
-      *[_type == "proyect"]{
-        "title": title,
-        "subtitle": subtitle,
-        "body":body,
-        "techs": techs,
-        "image": mainImage.asset->url,
-        "link": link
-      }
-    `;
+    try {
+      const res = await fetch(
+        `https://portfolio-cms-production.up.railway.app/api/proyects`
+      );
+      const data = await res.json();
 
-    const sanityResponse = await client.fetch(query);
+      data.docs.forEach((proyect) => {
+        let text;
+        if (
+          proyect.description &&
+          proyect.description[0] &&
+          proyect.description[0].children &&
+          proyect.description[0].children[0]
+        ) {
+          text = proyect.description[0].children[0].text;
+        }
 
-    console.log(sanityResponse);
+        let newItem = {
+          titleEs: proyect.title,
+          titleEn: proyect.title,
+          description: text,
+          image: proyect.image.url,
+          link: proyect.url_proyect || "/",
+          link_github: proyect.url_github || "/",
+          techs: proyect.techs,
+        };
 
-    setProyect([]);
+        setProyect((prevProyects) => [...prevProyects, newItem]);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-    sanityResponse.forEach((proyect) => {
-      let newItem = {
-        titleEs: proyect.title,
-        titleEn: proyect.title,
-        description: proyect.subtitle,
-        image: proyect.image,
-        link: proyect.link || "/",
-      };
+  const fetchInformation = async () => {
+    try {
+      const res = await fetch(
+        `https://portfolio-cms-production.up.railway.app/api/informationUsers/63a76d2ca8ebee97cc9f2d26`
+      );
+      const data = await res.json();
 
-      setProyect((prevProyects) => [...prevProyects, newItem]);
-    });
+      setInformation(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchSkills = async () => {
+    try {
+      const res = await fetch(
+        `https://portfolio-cms-production.up.railway.app/api/skills?limit=30`
+      );
+      const data = await res.json();
+
+      const groupedByCategory = data.docs.reduce((acc, obj) => {
+        if (!acc[obj.category]) {
+          acc[obj.category] = [];
+        }
+        acc[obj.category].push(obj);
+        return acc;
+      }, {});
+
+      const arrayGroupedByCategory = Object.entries(groupedByCategory).map(
+        ([category, objects]) => ({
+          category,
+          objects,
+        })
+      );
+
+      setSkills(arrayGroupedByCategory);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -67,6 +114,8 @@ export const PortfolioProvider = ({ children }) => {
         lenguage,
         setLenguage,
         repositories,
+        information,
+        skills,
       }}
     >
       {children}

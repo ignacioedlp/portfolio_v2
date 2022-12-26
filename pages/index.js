@@ -8,7 +8,8 @@ import { useContext, useEffect } from "react";
 import { PortfolioContext } from "../context/PortfolioContext";
 
 export default function Home() {
-  const { lenguage, proyects } = useContext(PortfolioContext);
+  const { lenguage, proyects, information, skills } =
+    useContext(PortfolioContext);
   return (
     <div>
       <Head className="container mx-auto">
@@ -18,11 +19,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Profile lenguage={lenguage}></Profile>
-      <Resume lenguage={lenguage}></Resume>
-      <Technologies lenguage={lenguage}></Technologies>
+      <Profile lenguage={lenguage} information={information}></Profile>
+      <Resume lenguage={lenguage} information={information}></Resume>
+      <Technologies lenguage={lenguage} skills={skills}></Technologies>
       <Proyects lenguage={lenguage} proyects={proyects}></Proyects>
-      <Contact lenguage={lenguage}></Contact>
+      <Contact lenguage={lenguage} information={information}></Contact>
     </div>
   );
 }

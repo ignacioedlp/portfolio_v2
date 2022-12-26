@@ -7,7 +7,7 @@ import {
 } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 
-function Contact({ lenguage }) {
+function Contact({ lenguage, information }) {
   const { register, handleSubmit, errors } = useForm();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
@@ -137,28 +137,28 @@ function Contact({ lenguage }) {
                 <div className="mx-2">
                   <Link
                     className="ml-4 text-gray-200"
-                    href="https://www.linkedin.com/in/ignacio-cafiero-torrubia-743487216/"
+                    href={information ? information.linkedin : "/"}
                     passHref
                   >
-                    <AiFillLinkedin className="text-3xl"></AiFillLinkedin>
+                    <AiFillLinkedin className="text-3xl cursor-pointer"></AiFillLinkedin>
                   </Link>
                 </div>
                 <div className="mx-2">
                   <Link
                     className="ml-4 text-gray-200 "
-                    href="https://www.instagram.com/tofiedlp1/"
+                    href={information ? information.instagram : "/"}
                     passHref
                   >
-                    <AiOutlineInstagram className="text-3xl"></AiOutlineInstagram>
+                    <AiOutlineInstagram className="text-3xl cursor-pointer"></AiOutlineInstagram>
                   </Link>
                 </div>
                 <div className="mx-2">
                   <Link
                     className="ml-4 text-gray-200"
-                    href="https://github.com/ignacioedlp"
+                    href={information ? information.github : "/"}
                     passHref
                   >
-                    <AiFillGithub className="text-3xl"></AiFillGithub>
+                    <AiFillGithub className="text-3xl cursor-pointer"></AiFillGithub>
                   </Link>
                 </div>
               </span>

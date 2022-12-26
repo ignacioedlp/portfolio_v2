@@ -2,7 +2,7 @@ import { React } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-function Profile({ lenguage }) {
+function Profile({ lenguage, information }) {
   return (
     <section className="text-gray-400 bg-gray-900 body-font ">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -19,7 +19,7 @@ function Profile({ lenguage }) {
 
           <p className="mb-8 leading-relaxed ">
             {lenguage == "es"
-              ? "Con capacidad de pensar nuevas ideas e implementar mejoras. Soy detallista y ordenado con los proyectos queme propongo"
+              ? "Con capacidad de pensar nuevas ideas e implementar mejoras. Soy detallista y ordenado con los proyectos que me propongo"
               : "With the ability to think new ideas and implement improvements. I am detail oriented and organized with the projects I propose"}
           </p>
           <div className="flex justify-center">
@@ -29,13 +29,23 @@ function Profile({ lenguage }) {
             >
               {lenguage == "es" ? "Contactame" : "Contact me"}
             </a>
-            <a
-              download={lenguage == "es" ? "SpanishCv.pdf" : "EnglishCV.pdf"}
-              href={lenguage == "es" ? "SpanishCv.pdf" : "EnglishCV.pdf"}
-              className="  ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
-            >
-              {lenguage == "es" ? "Descargar CV" : "Download CV"}
-            </a>
+            {information && (
+              <a
+                download={
+                  lenguage == "es"
+                    ? information.cv_spanish.url
+                    : information.cv_english.url
+                }
+                href={
+                  lenguage == "es"
+                    ? information.cv_spanish.url
+                    : information.cv_english.url
+                }
+                className="  ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
+              >
+                {lenguage == "es" ? "Descargar CV" : "Download CV"}
+              </a>
+            )}
           </div>
         </motion.div>
         <motion.div

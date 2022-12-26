@@ -3,9 +3,72 @@ import Repo from "../components/Repo";
 import Link from "next/link";
 import { useContext } from "react";
 import { PortfolioContext } from "../context/PortfolioContext";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  // tamano de la tabla de datos
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top",
+    },
+    title: {
+      display: true,
+      text: "Repositorios",
+    },
+  },
+};
+
+function formatData(objects) {
+  const counts = objects.reduce(
+    (acc, obj) => {
+      const language = obj.language || "N/A";
+      if (!acc[language]) {
+        acc[language] = 0;
+        acc.languages.push(language);
+      }
+      acc[language]++;
+      return acc;
+    },
+    { languages: [] }
+  );
+
+  return {
+    labels: counts.languages,
+    datasets: [
+      {
+        // Random data for demo purposes without faker
+        label: "Lenguages",
+        data: counts.languages.map((category) => counts[category]),
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        barThickness: 20,
+      },
+    ],
+  };
+}
 
 export default function Home({ data }) {
   const { lenguage, repositories } = useContext(PortfolioContext);
+
+  const result = formatData(repositories);
 
   return (
     <div>
@@ -25,6 +88,11 @@ export default function Home({ data }) {
               <Link href="https://github.com/ignacioedlp" passHref>
                 {lenguage === "es" ? "Ver repositorios" : "See repositories"}
               </Link>
+            </div>
+          </div>
+          <div className="w-full flex justify-center sm:hidden md:m-4">
+            <div className="md:w-1/2">
+              <Bar options={options} data={result} />
             </div>
           </div>
           <div className="flex flex-wrap -m-2">
