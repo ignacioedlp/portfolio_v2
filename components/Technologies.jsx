@@ -44,8 +44,11 @@ function Technologies({ lenguage, skills }) {
                   {category.category.toUpperCase()}
                 </h2>
                 <nav className="flex flex-col text-center items-center -mb-1 space-y-2 ">
-                  {category.objects.map((skill) => (
-                    <div className="flex-inline flex text-center justify-center items-center">
+                  {category.objects.map((skill, index) => (
+                    <div
+                      className="flex-inline flex text-center justify-center items-center"
+                      key={index}
+                    >
                       <Image
                         src={skill.image.url}
                         alt={skill.name}
