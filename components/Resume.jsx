@@ -39,40 +39,48 @@ function Resume({ lenguage, information }) {
               </div>
             </div>
             <div className="p-4 md:w-1/2 w-full">
-              <div className="h-full  p-8 rounded bg-gray-700">
+              <div className="h-full  p-8 rounded bg-gray-700 flex flex-col space-y-7">
                 <h2 className="text-gray-100 text-3xl title-font font-medium mb-4 ">
                   {lenguage === "es" ? "Informacion" : "Information"}
                 </h2>
                 <ul>
                   <li className="mb-4">
-                    <span className="text-gray-300 mr-2">
+                    <span className="text-gray-300 mr-2 text-xl">
                       {lenguage === "es" ? "Localizacion:" : "Localization:"}
                     </span>
-                    <span className="text-gray-100">
+                    <span className="text-gray-100 text-xl">
                       {information.location}
                     </span>
                   </li>
                   <li className="mb-4">
-                    <span className="text-gray-300 mr-2">
+                    <span className="text-gray-300 mr-2 text-xl">
                       {lenguage === "es" ? "Edad:" : "Age:"}
                     </span>
-                    <span className="text-gray-100">{information.age}</span>
+                    <span className="text-gray-100 text-xl">
+                      {information.age}
+                    </span>
                   </li>
                   <li className="mb-4">
-                    <span className="text-gray-300 mr-2">Mail:</span>
-                    <span className="text-gray-100">{information.email}</span>
+                    <span className="text-gray-300 mr-2 text-xl">Mail:</span>
+                    <span className="text-gray-100 text-xl">
+                      {information.email}
+                    </span>
                   </li>
                   <li className="mb-4">
-                    <span className="text-gray-300 mr-2">
+                    <span className="text-gray-300 mr-2 text-xl">
                       {lenguage === "es" ? "Estado:" : "State:"}
                     </span>
-                    <span className="text-gray-100">{information.state}</span>
+                    <span className="text-gray-100 text-xl">
+                      {information.state}
+                    </span>
                   </li>
                   <li className="mb-4">
-                    <span className="text-gray-300 mr-2">
+                    <span className="text-gray-300 mr-2 text-xl">
                       {lenguage === "es" ? "Telefono:" : "Phone:"}
                     </span>
-                    <span className="text-gray-100">{information.phone}</span>
+                    <span className="text-gray-100 text-xl">
+                      {information.phone}
+                    </span>
                   </li>
                 </ul>
               </div>

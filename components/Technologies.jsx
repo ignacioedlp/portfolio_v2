@@ -32,7 +32,7 @@ function Technologies({ lenguage, skills }) {
             {lenguage === "es" ? "Habilidades" : "Skills"}
           </h1>
         </div>
-        <div className="flex flex-wrap -m-4 justify-around ali">
+        <div className="md:flex md:flex-wrap md:-m-4 md:justify-around grid-cols-2 grid gap-4 items-center justify-start ">
           {skills &&
             // Recorro el array de categorias de skills y por cada categoria creo un div con las skills de esa categoria
             skills.map((category, index) => (

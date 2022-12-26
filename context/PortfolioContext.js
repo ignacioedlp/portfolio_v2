@@ -81,7 +81,7 @@ export const PortfolioProvider = ({ children }) => {
   const fetchSkills = async () => {
     try {
       const res = await fetch(
-        `https://portfolio-cms-production.up.railway.app/api/skills?limit=30`
+        `https://portfolio-cms-production.up.railway.app/api/skills?limit=30&sort=category`
       );
       const data = await res.json();
 
