@@ -10,7 +10,8 @@ function formatProyect(proyects, lenguage) {
     <div className=" py-2 px-2" key={index} layoutId={index}>
       <div className="flex relative h-64 ">
         <Image
-          layout="fill"
+          width={400}
+          height={300}
           alt={lenguage === "es" ? proyect.titleEs : proyect.titleEn}
           className="absolute inset-0 w-full h-full object-cover object-center"
           src={proyect.image}

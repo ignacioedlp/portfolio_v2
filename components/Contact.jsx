@@ -1,35 +1,34 @@
 import Link from "next/link";
-import { React, useState } from "react";
+import { React } from "react";
 import {
   AiFillLinkedin,
   AiFillGithub,
   AiOutlineInstagram,
 } from "react-icons/ai";
-import { useForm } from "react-hook-form";
 
 function Contact({ lenguage, information }) {
-  const { register, handleSubmit, errors } = useForm();
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  // const { register, handleSubmit, errors } = useForm();
+  // const [success, setSuccess] = useState(false);
+  // const [error, setError] = useState(false);
 
-  const onSubmit = (data) => {
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json, text-plain, */*",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      if (res.status === 200) {
-        setSuccess(true);
-        console.log("Enviado");
-      } else {
-        setError(true);
-        console.log("Error");
-      }
-    });
-  };
+  // const onSubmit = (data) => {
+  //   fetch("/api/contact", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json, text-plain, */*",
+  //     },
+  //     body: JSON.stringify(data),
+  //   }).then((res) => {
+  //     if (res.status === 200) {
+  //       setSuccess(true);
+  //       console.log("Enviado");
+  //     } else {
+  //       setError(true);
+  //       console.log("Error");
+  //     }
+  //   });
+  // };
 
   return (
     <section
@@ -37,7 +36,7 @@ function Contact({ lenguage, information }) {
       id="contact"
     >
       <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-col text-center w-full mb-12">
+        {/* <div className="flex flex-col text-center w-full mb-12">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-200">
             {lenguage === "es" ? "Contacto" : "Contact"}
           </h1>
@@ -66,13 +65,13 @@ function Contact({ lenguage, information }) {
           ) : (
             false
           )}
-        </div>
+        </div> */}
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
           <form
             className="flex flex-wrap -m-2"
-            onSubmit={handleSubmit(onSubmit)}
+            // onSubmit={handleSubmit(onSubmit)}
           >
-            <div className="p-2 w-1/2">
+            {/* <div className="p-2 w-1/2">
               <div className="relative">
                 <label
                   htmlFor="name"
@@ -126,7 +125,7 @@ function Contact({ lenguage, information }) {
               <button className="flex mx-auto text-white bg-indigo-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-800 rounded text-lg">
                 {lenguage === "es" ? "Enviar" : "Send"}
               </button>
-            </div>
+            </div> */}
             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
               <p className="leading-normal my-5">
                 61 nro 821.
