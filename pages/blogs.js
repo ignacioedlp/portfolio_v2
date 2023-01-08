@@ -26,14 +26,9 @@ export default function Blog() {
               </Link>
             </div>
           </div>
-          <div className="w-full flex justify-center sm:hidden md:m-4">
-            <div className="md:w-1/2">
-              <Bar options={options} data={result} />
-            </div>
-          </div>
           <div className="flex flex-wrap -m-2">
-            {blogs.map((repo) => (
-              <div></div>
+            {blogs.map((repo, index) => (
+              <div key={index}></div>
             ))}
           </div>
         </div>
