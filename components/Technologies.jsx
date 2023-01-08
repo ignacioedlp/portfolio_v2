@@ -41,22 +41,22 @@ function Technologies({ lenguage, skills }) {
                 key={index}
               >
                 <h2 className="underline font-medium title-font tracking-widest text-white mb-4 text-sm text-center ">
-                  {category.category.toUpperCase()}
+                  {category.title.toUpperCase()}
                 </h2>
                 <nav className="flex flex-col text-center items-center -mb-1 space-y-2 ">
-                  {category.objects.map((skill, index) => (
+                  {category.techs.map((skill, index) => (
                     <div
                       className="flex-inline flex text-center justify-center items-center"
                       key={index}
                     >
                       <Image
-                        src={skill.image.url}
-                        alt={skill.name}
+                        src={skill.logo}
+                        alt={skill.title}
                         className="w-6 h-6"
                         width={24}
                         height={24}
                       />
-                      <p className="text-lg ml-1 text">{skill.name}</p>
+                      <p className="text-lg ml-1 text">{skill.title}</p>
                     </div>
                   ))}
                 </nav>

@@ -33,13 +33,13 @@ function Profile({ lenguage, information }) {
               <a
                 download={
                   lenguage == "es"
-                    ? information.cv_spanish.url
-                    : information.cv_english.url
+                    ? information.cv_spanish
+                    : information.cv_english
                 }
                 href={
                   lenguage == "es"
-                    ? information.cv_spanish.url
-                    : information.cv_english.url
+                    ? information.cv_spanish
+                    : information.cv_english
                 }
                 className="  ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
               >

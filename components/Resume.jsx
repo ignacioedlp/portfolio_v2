@@ -27,7 +27,7 @@ function Resume({ lenguage, information }) {
                     <p className="inline-flex items-center">
                       <span className="flex-grow flex flex-col pl-4">
                         <span className="title-font font-medium text-gray-100">
-                          {education.asignature}
+                          {education.degree}
                         </span>
                         <span className="text-gray-300 text-sm">
                           {education.dateRange}
