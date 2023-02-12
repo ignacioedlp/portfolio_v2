@@ -20,16 +20,11 @@ export default async function handler(req, res) {
     html: req.body.message, // html body
   });
 
-  // console.log("Message sent: %s", info.accepted);
-  // // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
   if (info.accepted) {
     return res.status(200).send("Mensaje enviado");
   } else {
     return res.status(400).send("Mensaje no enviado");
   }
-  // // Preview only available when sending through an Ethereal account
-  // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  // //Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
   // return res.status(200);
 }

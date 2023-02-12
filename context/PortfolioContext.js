@@ -106,19 +106,6 @@ export const PortfolioProvider = ({ children }) => {
 
   const fetchSkills = async () => {
     try {
-      const res = await fetch(
-        `https://portfolio-cms-production.up.railway.app/api/skills?limit=30&sort=category`
-      );
-      const data = await res.json();
-
-      const groupedByCategory = data.docs.reduce((acc, obj) => {
-        if (!acc[obj.category]) {
-          acc[obj.category] = [];
-        }
-        acc[obj.category].push(obj);
-        return acc;
-      }, {});
-
       // crea una query para traer las tech ordenador por category desc para sanity
       const query = `*[_type == "category" && !hidden]{
         _id,
@@ -132,8 +119,6 @@ export const PortfolioProvider = ({ children }) => {
       }`;
 
       const info = await client.fetch(query);
-
-      console.log(info);
 
       for (const category of info) {
         for (let tech of category.techs) {

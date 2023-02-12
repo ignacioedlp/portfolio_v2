@@ -1,11 +1,6 @@
 import React from "react";
 
 function Resume({ lenguage, information }) {
-  // Si cambia la información, se renderiza el componente
-  React.useEffect(() => {
-    console.log("Renderizando componente Resume");
-  }, [information]);
-
   return (
     information && (
       <section className="text-gray-600 body-font bg-gray-900">
