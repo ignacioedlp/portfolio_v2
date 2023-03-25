@@ -36,8 +36,8 @@ function Hero({ information }) {
             className="object-cover object-center rounded"
             alt="hero"
             src="/Nuevos/hero.png"
-            height={500}
-            width={500}
+            height={400}
+            width={400}
           />
           <div className="flex flex-col w-full gap-3 text-center mt-5 items-center">
             <h1 className="font-bold text-black text-5xl md:text-7xl">

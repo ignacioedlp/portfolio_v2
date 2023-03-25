@@ -83,7 +83,7 @@ function Proyects({ proyects }) {
           </div>
           <div className="lg:flex-grow md:w-1/2 md:p-5 flex flex-col md:items-start md:text-left items-center text-center ">
             <h1 className="text-black font-bold text-[43px]">{filterProyects[currentProyect]?.titleEn}</h1>
-            <div className='h-[144px] md:w-[590px]'>
+            <div className='h-[144px] md:w-full'>
               <p className=" text-justify font-medium text-[20px] text-zinc-700">{filterProyects[currentProyect]?.description}</p>
             </div>
             <p className=" font-bold text-[15px] text-black uppercase">TECHS</p>
