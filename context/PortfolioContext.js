@@ -44,12 +44,13 @@ export const PortfolioProvider = ({ children }) => {
             image,
             url_proyect, 
             url_github,
+            categories,
             techs[]->{ title }
           } | order(_createdAt desc)`
       );
 
-      res.forEach((proyect) => {
-        let newItem = {
+      let all = res.map((proyect) => {
+        return {
           titleEs: proyect.title,
           titleEn: proyect.title,
           description: proyect.description || "No description",
@@ -57,10 +58,12 @@ export const PortfolioProvider = ({ children }) => {
           link: proyect.url_proyect || "/",
           link_github: proyect.url_github || "/",
           techs: proyect.techs,
+          categories: proyect.categories?.map((item) => item.name) || [],
         };
 
-        setProyect((prevProyects) => [...prevProyects, newItem]);
+
       });
+      setProyect(all);
     } catch (err) {
       console.log(err);
     }
