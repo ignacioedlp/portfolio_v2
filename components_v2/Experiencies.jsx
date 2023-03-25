@@ -3,7 +3,7 @@ import { AiFillStar } from "react-icons/ai";
 
 function Experiencies({ information }) {
   return (
-    <div className="flex flex-col justify-center gap-8 md:gap-28 my-9 md:my-0 container m-auto md:h-screen font-montserrat " id="education">
+    <div className="flex flex-col justify-center gap-8 md:gap-28 my-9  container m-auto md:h-screen font-montserrat " id="education">
       <div className="flex text-center w-full  justify-center ">
         <h1 className="text-[40px] font-bold title-font mb-4 text-rosewood tracking-widest uppercase">
           Experiencie & Education
