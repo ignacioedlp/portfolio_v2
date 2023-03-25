@@ -16,6 +16,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'degrees',
+      title: 'Degrees',
+      type: 'string',
+    }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -37,6 +42,10 @@ export default defineType({
             },
             {
               name: "degree",
+              type: "string",
+            },
+            {
+              name: "description",
               type: "string",
             },
             {
@@ -97,6 +106,11 @@ export default defineType({
       options: {
         accept: "application/pdf",
       },
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "string",
     }),
     defineField({
       name: "cv_english",

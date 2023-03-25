@@ -3,8 +3,9 @@ import Link from "next/link";
 import { PortfolioContext } from "../context/PortfolioContext";
 import { findFlagUrlByNationality } from "country-flags-svg";
 import Image from "next/image";
+import { BsDownload } from "react-icons/bs";
 
-function Navbar() {
+function Navbar({ information, testimonials }) {
   const { lenguage, setLenguage } = useContext(PortfolioContext);
 
   function handlerLenguage() {
@@ -25,17 +26,26 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="text-black-400 bg-red-500 body-font ">
+      <nav className="bg-seasalt text-black font-montserrat ">
         <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300">
-              <Link href="#">Ignacio</Link>
-            </div>
+            <a className="flex items-center gap-2 font-medium  title-font md:mb-0">
+              <Image
+                className="object-cover object-center rounded"
+                alt="hero"
+                src="/Nuevos/logo-toxe.png"
+                height={44}
+                width={44}
+              />
+              <span className="ml-2 text-xl font-bold">
+                ToxeDev
+              </span>
+            </a>
 
             <div className="flex md:hidden">
               <button
                 type="button"
-                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                className="text-black"
                 aria-label="toggle menu"
                 onClick={handleMenu}
               >
@@ -54,75 +64,83 @@ function Navbar() {
               id="menu"
               animate={{ opacity: 1, x: 0 }}
             >
-              <div className="flex flex-col md:flex-row md:mx-6">
-                <div className="mr-5 font-semibold">
-                  <Link
-                    className=" hover:text-white  w-[48px] h-[48px]  "
-                    href="/"
-                  >
-                    {lenguage == "es" ? "Inicio" : "Home"}
-                  </Link>
+              <div className="flex flex-col md:flex-row md:mx-6 font-semibold gap-2 py-2 md:py-0 cursor-pointer">
+                <div className="mr-10 hover:border-b-2 border-rosewood">
+                  <a href="#home">
+                    Home
+                  </a>
                 </div>
-                <div className="mr-5 font-semibold">
-                  <Link
-                    className=" hover:text-white w-[48px] h-[48px]"
-                    href="#skill"
-                  >
-                    {lenguage == "es" ? "Habilidades" : "Skills"}
-                  </Link>
+                <div className="mr-10 hover:border-b-2 border-rosewood">
+                  <a href="#about-me">
+                    About me
+                  </a>
                 </div>
-                <div className="mr-5 font-semibold">
-                  <Link
-                    className=" hover:text-white w-[48px] h-[48px]"
-                    href="#proyects"
-                  >
-                    {lenguage == "es" ? "Proyectos" : "Proyects"}
-                  </Link>
+                <div className="mr-10 hover:border-b-2 border-rosewood">
+                  <a href="#education">
+                    Education
+                  </a>
                 </div>
-                <div className="mr-5 font-semibold">
-                  <Link
-                    className="mr-5 hover:text-white w-[48px] h-[48px]"
-                    href="#contact"
-                  >
-                    {lenguage == "es" ? "Contactame" : "Contact"}
-                  </Link>
+                <div className="mr-10 hover:border-b-2 border-rosewood">
+                  <a href="#projects">
+                    Projects
+                  </a>
                 </div>
-                <div className="mr-5 font-semibold">
-                  <Link
-                    className="mr-5 hover:text-white w-[48px] h-[48px]"
-                    href="/github"
-                  >
-                    Github
-                  </Link>
-                </div>
+                {testimonials?.length != 0 ? <div className="mr-10 hover:border-b-2 border-rosewood">
+                  <a href="#testimonials">
+                    Testimonials
+                  </a>
+                </div> : null}
               </div>
-              <div className="flex justify-center md:block ">
+              <div className="flex justify-between md:block items-center">
+                <button className="items-center px-3 py-1 text-base border-0 rounded-[30px] bg-licorice md:mt-0 lg:hidden inline-flex "
+                >
+                  <a className="text-seasalt font-montserrat" download={
+                    information?.cv_english
+                  }
+                    href={
+                      information?.cv_english
+                    }>Download CV</a>
+                  <BsDownload className="ml-2 text-seasalt" />
+                </button>
                 <button
                   onClick={() => handlerLenguage()}
-                  className="w-[48px] h-[48px]"
+                  className="w-[35px] h-[35px] lg:hidden inline-flex"
                 >
                   {lenguage === "es" ? (
-                    <Image
-                      alt="es"
-                      width="40"
-                      height="30"
-                      src={findFlagUrlByNationality("Argentinian")}
-                    />
+                    <span class="fi fi-ar fis text-[35px] rounded-full"></span>
                   ) : (
-                    <Image
-                      alt="en"
-                      width="40"
-                      height="30"
-                      src={findFlagUrlByNationality("American")}
-                    />
+                    <span class="fi fi-gb fis text-[35px] rounded-full"></span>
                   )}
                 </button>
               </div>
             </div>
           ) : null}
+          <div className="hidden md:flex items-center gap-2 ">
+            <button className=" animate-border inline-block rounded-[30px] bg-gradient-to-r from-seasalt via-rosewood to-black_bean bg-[length:400%_400%] p-1" >
+              <div className=" text-seasalt items-center px-3 py-1 mt-4 text-base  rounded-[30px] bg-licorice md:mt-0 hidden lg:inline-flex font-montserrat">
+                <a download={
+                  information?.cv_english
+                }
+                  href={
+                    information?.cv_english
+                  }>Download CV</a>
+                <BsDownload className="ml-2" />
+              </div>
+            </button>
+            <button
+              onClick={() => handlerLenguage()}
+              className="w-[35px] h-[35px]"
+            >
+              {lenguage === "es" ? (
+                <span class="fi fi-ar fis text-[35px] rounded-full"></span>
+              ) : (
+                <span class="fi fi-gb fis text-[35px] rounded-full"></span>
+              )}
+            </button>
+          </div>
         </div>
-      </nav>
-    </div>
+      </nav >
+    </div >
   );
 }
 

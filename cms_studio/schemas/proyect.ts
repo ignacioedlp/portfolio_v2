@@ -64,6 +64,11 @@ export default defineType({
       title: 'Description',
       type: 'string',
     }),
+    defineField({
+      name: 'hide',
+      title: 'Hide',
+      type: 'boolean',
+    }),
   ],
 
   preview: {
