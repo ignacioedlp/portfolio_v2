@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { client, urlFor, getFileUrl } from "../libs/sanityClient";
+import moment from "moment";
 
 export const PortfolioContext = createContext();
 
@@ -10,12 +11,14 @@ export const PortfolioProvider = ({ children }) => {
   const [repositories, setRepositories] = useState([]);
   const [information, setInformation] = useState(null);
   const [skills, setSkills] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
     fetchProyects();
     fetchRepositories();
     fetchInformation();
     fetchSkills();
+    fetchTestimonials();
   }, []);
 
   const fetchRepositories = async () => {
@@ -34,11 +37,20 @@ export const PortfolioProvider = ({ children }) => {
   const fetchProyects = async () => {
     try {
       const res = await client.fetch(
-        `*[_type == 'proyect' && author._ref == 'cfdf2496-5fb3-4cb5-92d6-8c2279e0a67b'] | order(_createdAt desc) `
+        `*[_type == 'proyect' && author._ref == 'cfdf2496-5fb3-4cb5-92d6-8c2279e0a67b' && hide == false] {
+            _id,
+            title,
+            description,
+            image,
+            url_proyect, 
+            url_github,
+            categories,
+            techs[]->{ title }
+          } | order(_createdAt desc)`
       );
 
-      res.forEach((proyect) => {
-        let newItem = {
+      let all = res.map((proyect) => {
+        return {
           titleEs: proyect.title,
           titleEn: proyect.title,
           description: proyect.description || "No description",
@@ -46,10 +58,12 @@ export const PortfolioProvider = ({ children }) => {
           link: proyect.url_proyect || "/",
           link_github: proyect.url_github || "/",
           techs: proyect.techs,
+          categories: proyect.categories?.map((item) => item.name) || [],
         };
 
-        setProyect((prevProyects) => [...prevProyects, newItem]);
+
       });
+      setProyect(all);
     } catch (err) {
       console.log(err);
     }
@@ -67,6 +81,8 @@ export const PortfolioProvider = ({ children }) => {
           name,
           surname,
           phone,
+          degrees,
+          description,
           email,
           location,
           state,
@@ -75,22 +91,26 @@ export const PortfolioProvider = ({ children }) => {
           linkedin,
           "cv_spanish": cv_spanish.asset->url,
           "cv_english": cv_english.asset->url,
-          education
+          education[] | order(startDate asc)
         }`
       );
 
       setInformation({
         name: info[0].name,
-        lastname: info[0].lastname,
+        lastname: info[0].surname,
         email: info[0].email,
         phone: info[0].phone,
+        degrees: info[0].degrees,
         address: info[0].address,
         location: info[0].location,
+        description: info[0].description,
         state: info[0].state,
         education: info[0].education.map((item) => ({
           degree: item.degree,
           site: item.site,
-          dateRange: `${item.startDate} - ${item.endDate || "Actual"}`,
+          start: moment(item.startDate, 'YYYY-MM-dd').year(),
+          end: moment(item.endDate, 'YYYY-MM-dd').year() || "Now",
+          description: item.description,
         })),
         age: info[0].age,
         github: info[0].github,
@@ -132,6 +152,22 @@ export const PortfolioProvider = ({ children }) => {
     }
   };
 
+  const fetchTestimonials = async () => {
+    try {
+      const info = await client.fetch(
+        `*[_type == 'testimonial' && author._ref == 'cfdf2496-5fb3-4cb5-92d6-8c2279e0a67b']{
+          title,
+          location,
+          description
+        }`
+      );
+
+      setTestimonials(info);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <PortfolioContext.Provider
       value={{
@@ -140,6 +176,7 @@ export const PortfolioProvider = ({ children }) => {
         lenguage,
         setLenguage,
         repositories,
+        testimonials,
         information,
         skills,
       }}

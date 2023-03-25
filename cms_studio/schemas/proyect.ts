@@ -64,6 +64,28 @@ export default defineType({
       title: 'Description',
       type: 'string',
     }),
+    defineField({
+      name: 'hide',
+      title: 'Hide',
+      type: 'boolean',
+    }),
+    // Add categories to proyects
+    defineField({
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    }),
   ],
 
   preview: {

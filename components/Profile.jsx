@@ -1,10 +1,18 @@
 import { React } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  AiFillLinkedin,
+  AiFillGithub,
+  AiOutlineInstagram,
+} from "react-icons/ai";
+import { FaReact, FaPython } from "react-icons/fa";
+import { DiPostgresql, DiRubyRough, DiNodejsSmall } from "react-icons/di";
+import { SiFlutter } from "react-icons/si";
 
 function Profile({ lenguage, information }) {
   return (
-    <section className="text-gray-400 bg-gray-900 body-font ">
+    <section className="text-gray-400 bg-seasalt body-font ">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <motion.div
           animate={{ scale: [0.5, 1], x: [100, 0] }}
@@ -61,6 +69,44 @@ function Profile({ lenguage, information }) {
             width={500}
           />
         </motion.div>
+      </div>
+      <div className="flex flex-row items-center justify-around h-1/6 bg-seasalt">
+        <div className="flex gap-2">
+          <FaReact className="text-3xl cursor-pointer text-rosewood"></FaReact>
+          <p className="text-lg font-bold cursor-pointer text-rosewood font-montserrat">
+            ReactJs
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <DiPostgresql className="text-3xl cursor-pointer text-rosewood"></DiPostgresql>
+          <p className="text-xl font-bold cursor-pointer text-rosewood font-montserrat">
+            PostgreSQL
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <DiRubyRough className="text-3xl cursor-pointer text-rosewood"></DiRubyRough>
+          <p className="text-xl font-bold cursor-pointer text-rosewood font-montserrat">
+            Ruby on Rails
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <DiNodejsSmall className="text-3xl cursor-pointer text-rosewood"></DiNodejsSmall>
+          <p className="text-xl font-bold cursor-pointer text-rosewood font-montserrat">
+            NodeJs
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <SiFlutter className="text-3xl cursor-pointer text-rosewood"></SiFlutter>
+          <p className="text-xl font-bold cursor-pointer text-rosewood font-montserrat">
+            Flutter
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <FaPython className="text-3xl cursor-pointer text-rosewood"></FaPython>
+          <p className="text-xl font-bold cursor-pointer text-rosewood font-montserrat">
+            Python
+          </p>
+        </div>
       </div>
     </section>
   );
