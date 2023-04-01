@@ -1,6 +1,6 @@
 import { FaReact, FaPython, FaBootstrap } from "react-icons/fa";
 import { DiPostgresql, DiRubyRough, DiNodejsSmall, DiMysql } from "react-icons/di";
-import { SiFlutter, SiSolidity, SiTailwindcss, SiCss3, SiHtml5, SiJquery, SiJavascript, SiMongodb } from "react-icons/si";
+import { SiFlutter, SiSolidity, SiTailwindcss, SiCss3, SiHtml5, SiJquery, SiJavascript, SiMongodb, SiGraphql, SiApollographql } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { AiFillGithub } from "react-icons/ai";
 
@@ -43,6 +43,10 @@ export const getIconTech = (tech, size, pointer, color) => {
       return <AiFillGithub className={`${size} ${color} ${pointer}`}></AiFillGithub>;
     case "MySQL":
       return <DiMysql className={`${size} ${color} ${pointer}`}></DiMysql>;
+    case "GraphQL":
+      return <SiGraphql className={`${size} ${color} ${pointer}`}></SiGraphql>;
+    case "Apollo":
+      return <SiApollographql className={`${size} ${color} ${pointer}`}></SiApollographql>;
     default:
       return <p>Not found</p>
   }
