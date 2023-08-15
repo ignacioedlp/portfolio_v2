@@ -39,7 +39,7 @@ function Navbar() {
             ToxeDev
           </span>
         </a>
-        <nav className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-8 text-base md:ml-auto md:mr-auto ">
+        <nav className="flex flex-col flex-wrap items-center justify-center gap-8 text-base md:flex-row md:ml-auto md:mr-auto ">
           <a className="mr-5 font-semibold text-black font-montserrat">Home</a>
           <a className="mr-5 font-semibold text-black font-montserrat">
             About me
