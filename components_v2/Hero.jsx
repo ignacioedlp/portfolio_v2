@@ -41,7 +41,7 @@ function Hero({ information }) {
           />
           <div className="flex flex-col items-center w-full gap-3 mt-5 text-center">
             <h1 className="text-5xl font-bold text-black md:text-7xl">
-              {information?.name + " " + information?.lastname}
+              Ignacio Cafiero
             </h1>
             <h4 className="text-2xl font-medium text-rosewood ">
               {information?.degrees}
