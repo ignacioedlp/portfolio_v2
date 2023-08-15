@@ -5,8 +5,8 @@ import { info } from "autoprefixer";
 
 function AboutMe({ information }) {
   return (
-    <div className="flex md:flex-row items-center max-w-7xl h-screen container mx-auto  font-montserrat " id="about-me">
-      <motion.div className="lg:max-w-lg md:w-1/3 mb-10 md:mb-0 hidden md:flex" initial={{ opacity: 0, scale: 0.5 }}
+    <div className="container flex items-center h-screen mx-auto md:flex-row max-w-7xl font-montserrat " id="about-me">
+      <motion.div className="hidden mb-10 lg:max-w-lg md:w-1/3 md:mb-0 md:flex" initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}>
         <Image
@@ -17,17 +17,17 @@ function AboutMe({ information }) {
           src="/Nuevos/me.png"
         />
       </motion.div>
-      <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center gap-5  container m-auto">
+      <div className="container flex flex-col items-center gap-5 m-auto text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
         <h5 className="title-font text-[22px] mb-4  text-black  font-bold px-5 md:px-0">
           My name is {information?.name + " " + information?.lastname}.
         </h5>
         <h4 className="text-[24px] md:text-[30px]  font-bold text-black px-5 md:px-0">
           I'm {information?.degrees}
         </h4>
-        <p className="mb-8 text-[15px] md:text-[19px] text-black px-5 md:px-0 ">
+        <p className="mb-8 text-[15px] md:text-[19px] text-black px-5 md:px-0 max-w-2xl">
           {information?.description}
         </p>
-        <div className="flex flex-col justify-center w-full md:w-2/3 gap-4  px-5 md:px-0">
+        <div className="flex flex-col justify-center w-full gap-4 px-5 md:w-2/3 md:px-0">
           <div className="flex justify-between">
             <p className="text-rosewood font-bold text-[16px] md:text-[19px]">Full Name</p>
             <p className="text-black text-[16px] md:text-[19px]">{information?.name + "" + information?.lastname}</p>
