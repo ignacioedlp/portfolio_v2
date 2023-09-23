@@ -8,6 +8,7 @@ import Experiencies from "../components_v2/Experiencies";
 import Proyects from "../components_v2/Proyects";
 import Testimonials from "../components_v2/Testimonials";
 import Footer from "../components/Footer";
+import Education from "../components_v2/Education";
 import 'react-slideshow-image/dist/styles.css';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
@@ -23,12 +24,12 @@ export default function Home() {
         <link rel="icon" href="/Nuevos/logo-toxe.png" />
       </Head>
 
-      <div className="md:h-screen  container mx-auto ">
-        <Navbar information={information} testimonials={testimonials} />
+      <div className="container mx-auto md:h-screen ">
         <Hero lenguage={lenguage} information={information}></Hero>
       </div>
       <AboutMe lenguage={lenguage} information={information} />
       <Experiencies lenguage={lenguage} information={information} />
+      <Education lenguage={lenguage} information={information} />
       <Proyects lenguage={lenguage} proyects={proyects} />
       {testimonials.lenght == 0 ? <Testimonials lenguage={lenguage} testimonials={testimonials} /> : null}
       <Footer />
