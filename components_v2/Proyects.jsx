@@ -45,8 +45,8 @@ function Proyects({ proyects }) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center max-w-7xl my-9 md:my-0 md:h-screen container mx-auto font-montserrat" id='projects'>
-      <div className="flex-col items-center text-center w-full justify-center ">
+    <div className="container flex flex-col items-center justify-center mx-auto max-w-7xl my-9 md:my-0 md:h-screen font-montserrat" id='projects'>
+      <div className="flex-col items-center justify-center w-full text-center ">
         <h1 className="text-[40px] font-bold title-font  text-rosewood tracking-widest uppercase mb-10">
           Projects
         </h1>
@@ -68,12 +68,12 @@ function Proyects({ proyects }) {
           </div>
         </div>
       </div>
-      <section className="text-gray-600 body-font h-2/3 flex justify-center mt-6 md:mt-0">
-        <div className=" flex px-5 flex-col md:flex-row  items-center justify-center ">
-          <div className=" md:w-1/2  mb-10 md:mb-0 ">
-            <Image className="hidden md:block object-cover object-center rounded border-2 border-rosewood" alt="hero" src={filterProyects[currentProyect]?.image} width={630} height={454} />
-            <Image className="md:hidden block object-cover object-center rounded border-2 border-rosewood" alt="hero" src={filterProyects[currentProyect]?.image} width={400} height={250} />
-            <div className='flex justify-center items-center mt-4'>
+      <section className="flex justify-center mt-6 text-gray-600 body-font h-2/3 md:mt-0">
+        <div className="flex flex-col items-center justify-center px-5  md:flex-row">
+          <div className="mb-10  md:w-1/2 md:mb-0">
+            <Image className="hidden object-cover object-center border-2 rounded md:block border-rosewood" alt="hero" src={filterProyects[currentProyect]?.image} width={630} height={454} />
+            <Image className="block object-cover object-center border-2 rounded md:hidden border-rosewood" alt="hero" src={filterProyects[currentProyect]?.image} width={400} height={250} />
+            <div className='flex items-center justify-center mt-4'>
               {filterProyects?.map((proyect, index) => (
                 <div key={proyect.title} className={`h-2 w-2 rounded-full mx-1 ${index === currentProyect ? 'bg-rosewood' : 'bg-gray-300'}`}
                   onClick={() => setCurrentProyect(index)}
@@ -81,7 +81,7 @@ function Proyects({ proyects }) {
               ))}
             </div>
           </div>
-          <div className="lg:flex-grow md:w-1/2 md:p-5 flex flex-col md:items-start md:text-left items-center text-center ">
+          <div className="flex flex-col items-center text-center lg:flex-grow md:w-1/2 md:p-5 md:items-start md:text-left ">
             <h1 className="text-black font-bold text-[43px]">{filterProyects[currentProyect]?.titleEn}</h1>
             <div className='h-[144px] md:w-full'>
               <p className=" text-justify font-medium text-[20px] text-zinc-700">{filterProyects[currentProyect]?.description}</p>
