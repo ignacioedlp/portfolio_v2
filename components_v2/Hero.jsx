@@ -90,7 +90,7 @@ function HeroText({ information }) {
           transition={{ duration: 1 }}
           className="text-3xl md:text-[54px] font-bold text-black text-left"
         >
-          Ignacio Cafiero Cafiero
+          Ignacio Cafiero Torrubia
         </h1>
         <h4
           className="text-2xl md:text-[33px] font-medium text-gray-800 text-start"
